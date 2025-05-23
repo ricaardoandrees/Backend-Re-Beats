@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Ricardo",
+    "clave": "ricardo456",
+    "ID": 1,
+    "Amigos": [],
+    "Playlists": []
+  },
+  {
+    "nombre": "Alex",
+    "clave": "Alex1234",
+    "ID": 2,
+    "Amigos": [],
+    "Playlists": []
+  },
+  {
+    "nombre": "Andres",
+    "clave": "andres321",
+    "ID": 3,
+    "Amigos": [],
+    "Playlists": []
+  }
+]
