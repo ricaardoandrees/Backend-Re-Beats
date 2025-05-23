@@ -3,14 +3,15 @@ package com.Grupo586.Re.Beans.Model;
 import java.util.ArrayList;
 
 public abstract class Persona {
-  public String nombre;
-  public String clave;
+  private String nombre;
+  private String clave;
 
-  public Persona(String nombre,String clave) {
+  public Persona(String nombre, String clave) {
     this.nombre = nombre;
-    this.clave=clave;
+    this.clave = clave;
   }
 
+  public Persona() {}
 
   public String getNombre() {
     return nombre;

@@ -7,6 +7,10 @@ public class Usuario extends Persona{
   Integer ID;
   ArrayList<Usuario> Amigos;
   ArrayList<Playlist> Playlists;
+  
+  public Usuario() {
+    super(null, null);
+  }
 
   public Usuario(String nombre, String clave, ArrayList<Usuario> amigos, ArrayList<Playlist> playlists, Integer ID) {
     super( nombre, clave);
