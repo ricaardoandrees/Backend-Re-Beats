@@ -10,7 +10,7 @@ public class Cancion {
   String fecha;
   String imagen;
   ArrayList<Comentario> Comentarios;
-  ArrayList<String> Links; // Nuevo atributo de enlaces
+  ArrayList<String> Links;
 
   public Cancion(ArrayList<Comentario> comentarios, String imagen, String fecha, String titulo, String autor, String genero, ArrayList<String> links) {
     this.imagen = imagen;

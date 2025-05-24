@@ -1,5 +1,7 @@
 package com.Grupo586.Re.Beans.Controller;
 
+import com.Grupo586.Re.Beans.Model.Cancion;
+import com.Grupo586.Re.Beans.Model.Comentario;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -25,7 +27,7 @@ public class UsuarioController {
     }
 
     private final Gson gson = new Gson();
-
+    //UH de Perfil
     @GetMapping("/MostrarPerfil")
     public ResponseEntity<String> MostrarPerfil(@RequestParam("nombre") String nombre) throws IOException {
         try {
@@ -93,6 +95,138 @@ public class UsuarioController {
             return ResponseEntity.status(500).body("{\"error\":\"Error al leer/escribir el JSON\"}");
         }
     }
+
+
+
+    //UH de Cancion
+    @GetMapping("/ConsultarCanciones")
+    public ResponseEntity<String> ConsultarCanciones() {
+        try {
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+
+
+            Type listType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(jsonData, listType);
+
+
+            if (canciones.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"No hay canciones disponibles\"}");
+            }
+
+            return ResponseEntity.ok(gson.toJson(canciones));
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo JSON\"}");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error inesperado\"}");
+        }
+    }
+
+    @GetMapping("/MostrarCancion")
+    public ResponseEntity<String> MostrarCancion(@RequestParam("titulo") String titulo) {
+        try {
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+
+
+            Type listType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(jsonData, listType);
+
+
+            List<Cancion> resultado = new ArrayList<>();
+            for (Cancion cancion : canciones) {
+                if (cancion.getTitulo().equalsIgnoreCase(titulo)) {
+                    resultado.add(cancion);
+                }
+            }
+
+
+            if (resultado.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Canción no encontrada\"}");
+            }
+
+            return ResponseEntity.ok(gson.toJson(resultado));
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo JSON\"}");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error inesperado\"}");
+        }
+    }
+
+    //UH de Comentarios
+    //La UH de mostrar comentarios, ya esta hecha indirectamente en mostrar cancion, debido a que comentarios tiene un atributo en canciones que es una lista de comentarios y ya eso lo mostraria directamente en el front//
+
+    @PostMapping("/CrearComentario")
+    public ResponseEntity<String> CrearComentario(@RequestParam("titulo") String titulo,
+                                                  @RequestParam("usuario") String usuarioNombre,
+                                                  @RequestParam("comentario") String comentarioTexto) {
+        try {
+            // Leer usuarios registrados
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+
+            // Buscar el usuario en la lista
+            Usuario usuarioEncontrado = null;
+            for (Usuario u : usuarios) {
+                if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
+                    usuarioEncontrado = u;
+                    break;
+                }
+            }
+
+            // Si el usuario no está registrado, devolver 403 (Forbidden)
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"error\":\"Usuario no registrado\"}");
+            }
+
+            // Leer canciones
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+            Type songListType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(cancionesData, songListType);
+
+            // Buscar la canción por título
+            Cancion cancionEncontrada = null;
+            for (Cancion cancion : canciones) {
+                if (cancion.getTitulo().equalsIgnoreCase(titulo)) {
+                    cancionEncontrada = cancion;
+                    break;
+                }
+            }
+
+            // Si la canción no existe, devolver 404
+            if (cancionEncontrada == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Canción no encontrada\"}");
+            }
+
+            // Crear el comentario con el usuario registrado
+            Comentario nuevoComentario = new Comentario(comentarioTexto, usuarioEncontrado, String.valueOf(java.time.LocalDateTime.now()));
+
+            // Agregar el comentario a la lista de la canción
+            cancionEncontrada.getComentarios().add(nuevoComentario);
+
+            // Guardar el JSON actualizado
+            Files.write(Paths.get("src/main/resources/canciones.json"), gson.toJson(canciones).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Comentario agregado correctamente\"}");
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
+        }
+    }
+
+
 
 
 }
