@@ -1,6 +1,6 @@
 package com.Grupo586.Re.Beans.Model;
 
-import java.util.ArrayList;
+//import java.util.ArrayList; No se usa
 
 public abstract class Persona {
   private String nombre;

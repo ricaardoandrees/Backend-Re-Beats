@@ -22,6 +22,8 @@ public class UsuarioController {
 
     public UsuarioController() {}
 
+    // Usemos funciones nombradas con get y post. ej: PostPerfil
+    // En este caso estas creando el perfil no? Entonces seria crearPerfil
     @GetMapping("/MostrarPerfil")
     public ResponseEntity<String> MostrarPerfil(@RequestParam("nombre") String nombre) {
         ObjectMapper mapper = new ObjectMapper();

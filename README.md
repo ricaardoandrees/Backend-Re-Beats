@@ -1,2 +1,6 @@
 # Backend-Re-Beats
-Practica 4 TEP
+
+## Consultas
+
+    Reducir el numero de carpetas
+    Agrega el .gitignore, las carpeta .ide no debe estar en el repositorio

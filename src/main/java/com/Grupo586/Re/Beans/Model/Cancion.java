@@ -1,15 +1,18 @@
 package com.Grupo586.Re.Beans.Model;
 import java.util.ArrayList;
-import com.Grupo586.Re.Beans.Model.Comentario;
+//import com.Grupo586.Re.Beans.Model.Comentario; No se porque no es necesario, parece que si esta en la misma carpeta lo reconoce
 
 public class Cancion {
+  // Poner privates
   String titulo;
   String autor;
   String genero;
   String fecha;
   String imagen;
   ArrayList<Comentario> Comentarios;
+  //Agregar atributo array de links (este si esta en el constructor)
 
+  // Puedes quitar el array de comentarios en el constructor
   public Cancion(ArrayList<Comentario> comentarios, String imagen, String fecha, String titulo, String autor, String genero) {
     this.Comentarios = comentarios;
     this.imagen = imagen;
