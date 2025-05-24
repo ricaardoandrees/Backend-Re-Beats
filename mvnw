@@ -96,6 +96,7 @@ die() {
   printf %s\\n "$1" >&2
   exit 1
 }
+export MAVEN_OPTS="--add-opens java.base/java.time=ALL-UNNAMED"
 
 trim() {
   # MWRAPPER-139:

@@ -6,9 +6,9 @@ import com.Grupo586.Re.Beans.Model.Usuario;
 public class Comentario {
   String comentario;
   Usuario usuario;
-  LocalDateTime fecha;
+  String fecha;
 
-  public Comentario(String comentario, Usuario usuario, LocalDateTime fecha) {
+  public Comentario(String comentario, Usuario usuario, String fecha) {
     this.comentario = comentario;
     this.usuario = usuario;
     this.fecha = fecha;
@@ -30,11 +30,11 @@ public class Comentario {
     this.usuario = usuario;
   }
 
-  public LocalDateTime getFecha() {
+  public String getFecha() {
     return fecha;
   }
 
-  public void setFecha(LocalDateTime fecha) {
+  public void setFecha(String fecha) {
     this.fecha = fecha;
   }
 }

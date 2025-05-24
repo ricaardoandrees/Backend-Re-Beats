@@ -1,57 +1,109 @@
 package com.Grupo586.Re.Beans.Controller;
 
-import com.Grupo586.Re.Beans.Model.Usuario;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import com.Grupo586.Re.Beans.Model.Usuario;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
 public class UsuarioController {
 
-    public UsuarioController() {}
+    public UsuarioController() {
+    }
+
+    private final Gson gson = new Gson();
 
     @GetMapping("/MostrarPerfil")
-    public ResponseEntity<String> MostrarPerfil(@RequestParam("nombre") String nombre) {
-        ObjectMapper mapper = new ObjectMapper();
-
+    public ResponseEntity<String> MostrarPerfil(@RequestParam("nombre") String nombre) throws IOException {
         try {
-            List<Usuario> perfiles = mapper.readValue(
-                    new ClassPathResource("usuarios.json").getInputStream(),
-                    new TypeReference<List<Usuario>>() {}
-            );
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
 
 
+            Type listType = new TypeToken<List<Usuario>>() {
+            }.getType();
+            List<Usuario> perfiles = gson.fromJson(jsonData, listType);
 
-            Optional<Usuario> perfilEncontrado = perfiles.stream()
-                    .filter(p -> p.getNombre().equalsIgnoreCase(nombre)).findFirst();
+            // Filtrar los perfiles según el nombre
+            List<Usuario> filtrados = perfiles.stream()
+                    .filter(perfil -> perfil.getNombre().equalsIgnoreCase(nombre))
+                    .collect(Collectors.toList());
 
-            if (perfilEncontrado.isPresent()) {
-                String jsonResultado = mapper.writeValueAsString(perfilEncontrado.get());
-                return ResponseEntity.ok(jsonResultado);
-            } else {
-                return ResponseEntity.status(404).body("Perfil no encontrado");
+
+            if (filtrados.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
             }
 
+            return ResponseEntity.ok(gson.toJson(filtrados));
+
         } catch (IOException e) {
-            return ResponseEntity.status(500).body("Error al encontrar el perfil");
+            // si hay error leyendo el jsom
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo JSON\"}");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error inesperado\"}");
+        }
+    }
+
+    @PostMapping("/RegistrarUsuario")
+    public ResponseEntity<String> RegistrarUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave) {
+        try {
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+
+
+            Type listType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(jsonData, listType);
+
+
+            int maxId = 0;
+            for (Usuario usuario : usuarios) {
+                if (usuario.getID() > maxId) {
+                    maxId = usuario.getID();
+                }
+            }
+
+            int nuevoId = maxId + 1;
+
+
+            Usuario nuevoUsuario = new Usuario( nombre, clave, new ArrayList<>(), new ArrayList<>(),nuevoId);
+            usuarios.add(nuevoUsuario);
+
+
+            Files.write(Paths.get("src/main/resources/usuarios.json"), gson.toJson(usuarios).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Usuario registrado correctamente\"}");
+
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("{\"error\":\"Error al leer/escribir el JSON\"}");
         }
     }
 
 
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
 

@@ -14,12 +14,19 @@ public class Usuario extends Persona{
 
   public Usuario(String nombre, String clave, ArrayList<Usuario> amigos, ArrayList<Playlist> playlists, Integer ID) {
     super( nombre, clave);
-    if(amigos==null) {
-    amigos = new ArrayList<Usuario>();
+
+    if (amigos == null) {
+      this.Amigos = new ArrayList<Usuario>();
+    } else {
+      this.Amigos = amigos;
     }
-    if(playlists==null) {
-     playlists=new ArrayList<Playlist>();
+
+    if (playlists == null) {
+      this.Playlists = new ArrayList<Playlist>();
+    } else {
+      this.Playlists = playlists;
     }
+
     this.ID = ID;
   }
 
