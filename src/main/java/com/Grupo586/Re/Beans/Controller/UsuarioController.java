@@ -62,9 +62,9 @@ public class UsuarioController {
                     .body("{\"error\":\"Error inesperado\"}");
         }
     }
-
-    @PostMapping("/RegistrarUsuario")
-    public ResponseEntity<String> RegistrarUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave) {
+    //Esta es la que crea el perfil
+    @PostMapping("/CrearUsuario")
+    public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave) {
         try {
 
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
@@ -245,18 +245,18 @@ public class UsuarioController {
                 }
             }
 
-            // Si el usuario no está registrado, devolver 403 (Forbidden)
+
             if (usuarioEncontrado == null) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body("{\"error\":\"Usuario no registrado\"}");
             }
 
-            // Leer el JSON de canciones
+
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
             Type songListType = new TypeToken<List<Cancion>>() {}.getType();
             List<Cancion> cancionesDisponibles = gson.fromJson(cancionesData, songListType);
 
-            // Filtrar las canciones que existen
+
             List<Cancion> cancionesValidas = new ArrayList<>();
             for (String titulo : cancionesTitulos) {
                 for (Cancion c : cancionesDisponibles) {
@@ -273,11 +273,11 @@ public class UsuarioController {
                         .body("{\"error\":\"Ninguna canción válida encontrada\"}");
             }
 
-            // Crear la playlist y asignarla al usuario con ArrayList<>
+
             Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado, new ArrayList<>(cancionesValidas));
             usuarioEncontrado.getPlaylists().add(nuevaPlaylist);
 
-            // Guardar la lista de usuarios actualizada
+
             Files.write(Paths.get("src/main/resources/usuarios.json"), gson.toJson(usuarios).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Playlist creada correctamente\"}");
