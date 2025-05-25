@@ -169,13 +169,14 @@ public class UsuarioController {
                                                   @RequestParam("usuario") String usuarioNombre,
                                                   @RequestParam("comentario") String comentarioTexto) {
         try {
-            // Leer usuarios registrados
+            //leo usuarios
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
-            // Buscar el usuario en la lista
+
             Usuario usuarioEncontrado = null;
+
             for (Usuario u : usuarios) {
                 if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
                     usuarioEncontrado = u;
@@ -183,18 +184,17 @@ public class UsuarioController {
                 }
             }
 
-            // Si el usuario no está registrado, devolver 403 (Forbidden)
             if (usuarioEncontrado == null) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body("{\"error\":\"Usuario no registrado\"}");
             }
 
-            // Leer canciones
+            // leo canciones
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
             Type songListType = new TypeToken<List<Cancion>>() {}.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, songListType);
 
-            // Buscar la canción por título
+            // busco cancion
             Cancion cancionEncontrada = null;
             for (Cancion cancion : canciones) {
                 if (cancion.getTitulo().equalsIgnoreCase(titulo)) {
@@ -203,19 +203,19 @@ public class UsuarioController {
                 }
             }
 
-            // Si la canción no existe, devolver 404
+
             if (cancionEncontrada == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body("{\"mensaje\":\"Canción no encontrada\"}");
             }
 
-            // Crear el comentario con el usuario registrado
+
             Comentario nuevoComentario = new Comentario(comentarioTexto, usuarioEncontrado, String.valueOf(java.time.LocalDateTime.now()));
 
-            // Agregar el comentario a la lista de la canción
+
             cancionEncontrada.getComentarios().add(nuevoComentario);
 
-            // Guardar el JSON actualizado
+
             Files.write(Paths.get("src/main/resources/canciones.json"), gson.toJson(canciones).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Comentario agregado correctamente\"}");
@@ -225,6 +225,10 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
         }
     }
+
+    @PostMapping("/CrearPlaylist")
+    public ResponseEntity<String> CrearPlaylist(){}
+
 
 
 
