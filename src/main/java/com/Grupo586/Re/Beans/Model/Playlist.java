@@ -3,10 +3,11 @@ package com.Grupo586.Re.Beans.Model;
 import java.util.ArrayList;
 import com.Grupo586.Re.Beans.Model.Cancion;
 import com.Grupo586.Re.Beans.Model.Usuario;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Playlist  {
   String Descripcion;
-  Usuario Propietario;
+  transient Usuario Propietario;
   ArrayList<Cancion> Canciones;
 
   public Playlist(String descripcion, Usuario propietario, ArrayList<Cancion> canciones) {

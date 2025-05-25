@@ -2,6 +2,7 @@ package com.Grupo586.Re.Beans.Controller;
 
 import com.Grupo586.Re.Beans.Model.Cancion;
 import com.Grupo586.Re.Beans.Model.Comentario;
+import com.Grupo586.Re.Beans.Model.Playlist;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -225,15 +226,73 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
         }
     }
-
     @PostMapping("/CrearPlaylist")
-    public ResponseEntity<String> CrearPlaylist(){}
+    public ResponseEntity<String> CrearPlaylist(@RequestParam("usuario") String usuarioNombre,
+                                                @RequestParam("descripcion") String descripcionPlaylist,
+                                                @RequestParam("canciones") List<String> cancionesTitulos) {
+        try {
+            // Leer usuarios registrados
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+
+            // Buscar al usuario en la lista
+            Usuario usuarioEncontrado = null;
+            for (Usuario u : usuarios) {
+                if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
+                    usuarioEncontrado = u;
+                    break;
+                }
+            }
+
+            // Si el usuario no está registrado, devolver 403 (Forbidden)
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"error\":\"Usuario no registrado\"}");
+            }
+
+            // Leer el JSON de canciones
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+            Type songListType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> cancionesDisponibles = gson.fromJson(cancionesData, songListType);
+
+            // Filtrar las canciones que existen
+            List<Cancion> cancionesValidas = new ArrayList<>();
+            for (String titulo : cancionesTitulos) {
+                for (Cancion c : cancionesDisponibles) {
+                    if (c.getTitulo().equalsIgnoreCase(titulo)) {
+                        cancionesValidas.add(c);
+                        break;
+                    }
+                }
+            }
+
+            // Si no hay canciones válidas, devolver error
+            if (cancionesValidas.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"error\":\"Ninguna canción válida encontrada\"}");
+            }
+
+            // Crear la playlist y asignarla al usuario con ArrayList<>
+            Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado, new ArrayList<>(cancionesValidas));
+            usuarioEncontrado.getPlaylists().add(nuevaPlaylist);
+
+            // Guardar la lista de usuarios actualizada
+            Files.write(Paths.get("src/main/resources/usuarios.json"), gson.toJson(usuarios).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Playlist creada correctamente\"}");
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
+        }
+    }
+    }
 
 
 
 
 
-}
 
 
 
