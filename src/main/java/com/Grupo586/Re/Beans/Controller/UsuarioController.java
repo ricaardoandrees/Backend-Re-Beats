@@ -287,6 +287,44 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
         }
     }
+
+    @GetMapping("/Login")
+    public ResponseEntity<String> Login(@RequestParam("nombre") String nombre,
+                                        @RequestParam("clave") String clave) {
+        try {
+
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+
+
+            Usuario usuarioEncontrado = null;
+            for (Usuario u : usuarios) {
+                if (u.getNombre().equalsIgnoreCase(nombre) && u.getClave().equals(clave)) {
+                    usuarioEncontrado = u;
+                    break;
+                }
+            }
+
+
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("{\"error\":\"Usuario o clave incorrectos\"}");
+            }
+
+
+            if ("admin".equalsIgnoreCase(usuarioEncontrado.getNombre())) {
+                return ResponseEntity.ok("{\"mensaje\":\"Login exitoso\", \"perfil\":\"admin\"}");
+            }
+
+
+            return ResponseEntity.ok(gson.toJson(usuarioEncontrado));
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo JSON\"}");
+        }
+    }
     }
 
 
