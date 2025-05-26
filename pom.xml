@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.Grupo586</groupId>
-	<artifactId>Re-Beans</artifactId>
+	<artifactId>Re-Beats</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Re-Beans</name>
 	<description>Demo project for Spring Boot</description>
