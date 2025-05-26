@@ -232,12 +232,12 @@ public class UsuarioController {
                                                 @RequestParam("descripcion") String descripcionPlaylist,
                                                 @RequestParam("canciones") List<String> cancionesTitulos) {
         try {
-            // Leer usuarios registrados
+
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
-            // Buscar al usuario en la lista
+
             Usuario usuarioEncontrado = null;
             for (Usuario u : usuarios) {
                 if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
@@ -268,7 +268,7 @@ public class UsuarioController {
                 }
             }
 
-            // Si no hay canciones válidas, devolver error
+
             if (cancionesValidas.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                         .body("{\"error\":\"Ninguna canción válida encontrada\"}");
