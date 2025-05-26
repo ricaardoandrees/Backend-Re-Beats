@@ -326,6 +326,43 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer el archivo JSON\"}");
         }
     }
+
+    @GetMapping("/MostrarPlaylists")
+    public ResponseEntity<String> MostrarPlaylists(@RequestParam("nombre") String nombre) {
+        try {
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type listType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(jsonData, listType);
+
+
+            Usuario usuarioEncontrado = null;
+            for (Usuario usuario : usuarios) {
+                if (usuario.getNombre().equalsIgnoreCase(nombre)) {
+                    usuarioEncontrado = usuario;
+                    break;
+                }
+            }
+
+
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+
+            if (usuarioEncontrado.getPlaylists().isEmpty()) {
+                return ResponseEntity.ok("{\"mensaje\":\"El usuario no tiene playlists\"}");
+            }
+
+
+            return ResponseEntity.ok(gson.toJson(usuarioEncontrado.getPlaylists()));
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo JSON\"}");
+        }
+    }
     }
 
 
