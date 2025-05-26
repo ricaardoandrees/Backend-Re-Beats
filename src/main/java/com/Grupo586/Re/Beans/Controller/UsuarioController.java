@@ -275,7 +275,7 @@ public class UsuarioController {
             }
 
 
-            Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado, new ArrayList<>(cancionesValidas));
+            Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado.getNombre(), new ArrayList<>(cancionesValidas));
             usuarioEncontrado.getPlaylists().add(nuevaPlaylist);
 
 

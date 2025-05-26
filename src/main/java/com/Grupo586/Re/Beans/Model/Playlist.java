@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Playlist  {
   String Descripcion;
-  transient Usuario Propietario;
+  String Propietario;
   ArrayList<Cancion> Canciones;
 
-  public Playlist(String descripcion, Usuario propietario, ArrayList<Cancion> canciones) {
+  public Playlist(String descripcion, String propietario, ArrayList<Cancion> canciones) {
     this.Descripcion = descripcion;
     this.Propietario = propietario;
     this.Canciones = canciones;
@@ -24,11 +24,11 @@ public class Playlist  {
     this.Descripcion = descripcion;
   }
 
-  public Usuario getPropietario() {
+  public String getPropietario() {
     return Propietario;
   }
 
-  public void setPropietario(Usuario propietario) {
+  public void setPropietario(String propietario) {
     this.Propietario = propietario;
   }
 
