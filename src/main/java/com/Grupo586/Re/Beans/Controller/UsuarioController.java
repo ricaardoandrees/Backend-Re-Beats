@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController {
 
     public UsuarioController() {
