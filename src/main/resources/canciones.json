@@ -473,7 +473,7 @@
     "fecha": "2021-08-10",
     "imagen": "http://localhost:8080/Imagenes/Desenfocao.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=mxYhwBMCvkk"]
   },
   {
     "titulo": "Nea",
@@ -482,7 +482,7 @@
     "fecha": "2020-01-01",
     "imagen": "http://localhost:8080/Imagenes/Nea.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=KoOUHJ6AGJ4"]
   },
   {
     "titulo": "Miau",
@@ -491,7 +491,7 @@
     "fecha": "2024-06-13",
     "imagen": "http://localhost:8080/Imagenes/Miau.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=vwcuT3Gd0uA"]
   },
   {
     "titulo": "Cangrinaje",
@@ -500,7 +500,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cangrinaje.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=waOUPmXiV5g"]
   },
   {
     "titulo": "Ateo",
@@ -509,7 +509,7 @@
     "fecha": "2021-10-08",
     "imagen": "http://localhost:8080/Imagenes/Ateo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=3gz0rOQnH9U"]
   },
   {
     "titulo": "Demasiadas Mujeres",
@@ -518,7 +518,7 @@
     "fecha": "2020-10-08",
     "imagen": "http://localhost:8080/Imagenes/Demasiadas-Mujeres.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=0xXWc6GVB0Y"]
   },
   {
     "titulo": "Como un G",
@@ -527,7 +527,7 @@
     "fecha": "2022-03-18",
     "imagen": "http://localhost:8080/Imagenes/Como-un-G.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=QwtjqyG3rwY"]
   },
   {
     "titulo": "Velocidad de Crucero",
@@ -536,7 +536,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Velocidad-de-Crucero.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=W3zt5NeSZ8I"]
   },
   {
     "titulo": "Enemigos",
@@ -545,7 +545,7 @@
     "fecha": "2022-01-01",
     "imagen": "http://localhost:8080/Imagenes/Enemigos.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=XQZV_6bH1RQ"]
   },
   {
     "titulo": "La Incondicional",
@@ -554,7 +554,7 @@
     "fecha": "1989-02-20",
     "imagen": "http://localhost:8080/Imagenes/La-Incondicional.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=2GxzGo5T6Ko"]
   },
   {
     "titulo": "Hasta que me olvides",
@@ -563,7 +563,7 @@
     "fecha": "1993-08-09",
     "imagen": "http://localhost:8080/Imagenes/Hasta-que-me-olvides.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=JfAmLR4sAzg"]
   },
   {
     "titulo": "Gatúbela",
@@ -572,7 +572,7 @@
     "fecha": "2022-08-25",
     "imagen": "http://localhost:8080/Imagenes/Gatubela.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=xyIkRZPpDbo"]
   },
   {
     "titulo": "Cosmo",
@@ -581,7 +581,7 @@
     "fecha": "2024-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cosmo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=fci2E3G5XsM"]
   },
   {
     "titulo": "Sin Poderes",
@@ -590,7 +590,7 @@
     "fecha": "2023-01-01",
     "imagen": "/Imagenes/Sin-Poderes.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=PAeTt-IdovM"]
   },
   {
     "titulo": "Bellaka",
@@ -599,7 +599,7 @@
     "fecha": "2023-01-01",
     "imagen": "/Imagenes/Bellaka.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Qh9pQKUq1hk"]
   },
   {
     "titulo": "Problemon",
@@ -608,7 +608,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Problemon.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=RYZ7mu4lt60"]
   },
   {
     "titulo": "Noches de Más",
@@ -617,7 +617,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Noches-de-Mas.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=k4kP09sXIZo"]
   },
   {
     "titulo": "Ferrari",
@@ -626,7 +626,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Ferrari.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=_4rNvXcDLdE"]
   },
   {
     "titulo": "Me Rehúso",
@@ -635,7 +635,7 @@
     "fecha": "2016-09-16",
     "imagen": "http://localhost:8080/Imagenes/Me-Rehuso.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=kOkQ4T5WO9E"]
   },
   {
     "titulo": "Ley Universal",
@@ -644,7 +644,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Ley-Universal.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=jAObAm-hvqA"]
   },
   {
     "titulo": "3 Caídas",
@@ -653,7 +653,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/3-Caidas.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=k5igRMw6GEs"]
   },
   {
     "titulo": "Diciembre",
@@ -662,7 +662,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Diciembre.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=yABr7VKbi6U"]
   },
   {
     "titulo": "Antología",
@@ -671,7 +671,7 @@
     "fecha": "1995-10-17",
     "imagen": "http://localhost:8080/Imagenes/Antologia.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=YfpRm-p7qlY"]
   },{
   "titulo": "Frío",
   "autor": "Omar Apollo",
@@ -679,7 +679,7 @@
   "fecha": "2023-10-04",
   "imagen": "http://localhost:8080/Imagenes/Frio.jpg",
   "comentarios": [],
-  "links": []
+  "links": ["https://www.youtube.com/watch?v=n0LMQO84FxU"]
 },
   {
     "titulo": "Qué Somos",
@@ -688,7 +688,7 @@
     "fecha": "2022-08-04",
     "imagen": "http://localhost:8080/Imagenes/Que-Somos.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=wQgi3WLUhIM"]
   },
   {
     "titulo": "Gata",
@@ -697,7 +697,7 @@
     "fecha": "2023-09-14",
     "imagen": "http://localhost:8080/Imagenes/Gata",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=4cZdAkYvniQ"]
   },
   {
     "titulo": "Voy con Todo",
@@ -706,7 +706,7 @@
     "fecha": "2023-09-14",
     "imagen": "http://localhost:8080/Imagenes/Voy-con-Todo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=mFZebHzdaFM"]
   },
   {
     "titulo": "Una Vez",
@@ -715,7 +715,7 @@
     "fecha": "2020-05-29",
     "imagen": "http://localhost:8080/Imagenes/Una-Vez.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=zy5rKwZ5-ug"]
   },
   {
     "titulo": "Cómo Estás",
@@ -724,7 +724,7 @@
     "fecha": "2023-06-01",
     "imagen": "http://localhost:8080/Imagenes/Como-Estas.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=eVPGoULUVTI"]
   },
   {
     "titulo": "Mala Mujer",
@@ -733,7 +733,7 @@
     "fecha": "2017-06-02",
     "imagen": "http://localhost:8080/Imagenes/Mala-Mujer.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=6JCLY0Rlx6Q"]
   },
   {
     "titulo": "Igual que un Ángel",
@@ -742,7 +742,7 @@
     "fecha": "2024-01-11",
     "imagen": "http://localhost:8080/Imagenes/Igual-que-un-Angel.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=pmtENuWtvLA"]
   },
   {
     "titulo": "Necio",
@@ -751,7 +751,7 @@
     "fecha": "2011-11-08",
     "imagen": "http://localhost:8080/Imagenes/Necio.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Zn_pKze6gHY"]
   },
   {
     "titulo": "El Paraíso",
@@ -760,7 +760,7 @@
     "fecha": "2020-08-07",
     "imagen": "http://localhost:8080/Imagenes/El-Paraiso.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=AfUoAS6crXA"]
   },
   {
     "titulo": "Cosas Que No Te Dije",
@@ -769,7 +769,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cosas-Que-No-Te-Dije.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=RrSLM1IQGvY"]
   },
   {
     "titulo": "Solo",
@@ -778,7 +778,7 @@
     "fecha": "2020-08-07",
     "imagen": "http://localhost:8080/Imagenes/Solo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=UCGek4S6uZQ"]
   },
   {
     "titulo": "Si Preguntas por Mí",
@@ -787,7 +787,7 @@
     "fecha": "2022-10-28",
     "imagen": "http://localhost:8080/Imagenes/Si-Preguntas-por-Mi.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=53U_JnSryI4"]
   },
   {
     "titulo": "Mónaco",
@@ -796,7 +796,7 @@
     "fecha": "2023-10-13",
     "imagen": "http://localhost:8080/Imagenes/Monaco.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=y6GwWLHgStk"]
   },
   {
     "titulo": "Mas Humano",
@@ -805,7 +805,7 @@
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Mas-Humano.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=yoGO4aC9nF8"]
   },
   {
     "titulo": "Yoko",
@@ -814,7 +814,7 @@
     "fecha": "2023-11-10",
     "imagen": "http://localhost:8080/Imagenes/Yoko.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=2mtaB-Vr6m8"]
   },
   {
     "titulo": "Columbia",
@@ -823,7 +823,7 @@
     "fecha": "2023-07-07",
     "imagen": "http://localhost:8080/Imagenes/Columbia.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=bqok2Xyz3fU"]
   },
   {
     "titulo": "Es Verdad",
@@ -832,7 +832,7 @@
     "fecha": "2023-03-24",
     "imagen": "http://localhost:8080/Imagenes/Es-Verdad.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=c8lj4YwK4N4"]
   },
   {
     "titulo": "Nunca Estoy",
@@ -841,7 +841,7 @@
     "fecha": "2020-04-23",
     "imagen": "http://localhost:8080/Imagenes/Nunca-Estoy.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=rGup1-cEKNs"]
   },
   {
     "titulo": "Primeras Veces",
@@ -850,7 +850,7 @@
     "fecha": "2022-11-04",
     "imagen": "http://localhost:8080/Imagenes/Primeras-Veces.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=sx4zLznYY4g"]
   },
   {
     "titulo": "No Se Va",
@@ -859,7 +859,7 @@
     "fecha": "2015-06-16",
     "imagen": "http://localhost:8080/Imagenes/No-Se-Va.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=07gkOrQKcRM"]
   },
   {
     "titulo": "Holanda",
@@ -868,7 +868,7 @@
     "fecha": "2023-08-11",
     "imagen": "http://localhost:8080/Imagenes/Holanda.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=1zXK_aBOtmY"]
   },
   {
     "titulo": "Me Voy",
@@ -877,7 +877,7 @@
     "fecha": "2006-03-14",
     "imagen": "http://localhost:8080/Imagenes/Me-Voy.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=-oqAU5VxFWs"]
   },
   {
     "titulo": "Quién lo Diría",
@@ -886,7 +886,7 @@
     "fecha": "2022-03-24",
     "imagen": "http://localhost:8080/Imagenes/Quien-lo-Diria.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Oa1W91JLAn8"]
   },
   {
     "titulo": "Todavía",
@@ -895,7 +895,7 @@
     "fecha": "2023-06-29",
     "imagen": "http://localhost:8080/Imagenes/Todavia.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=_EbI_7oksh0"]
   },{
   "titulo": "Para Cenar",
   "autor": "Anakena",
@@ -903,7 +903,7 @@
   "fecha": "2023-06-09",
   "imagen": "http://localhost:8080/Imagenes/Para-Cenar.jpg",
   "comentarios": [],
-  "links": []
+  "links": ["https://www.youtube.com/watch?v=VfUvDjIr5YI"]
 },
   {
     "titulo": "Feriado",
@@ -912,7 +912,7 @@
     "fecha": "2021-07-23",
     "imagen": "http://localhost:8080/Imagenes/Feriado.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=NsBaJv7j5NY"]
   },
   {
     "titulo": "A Ningún Hombre",
@@ -921,7 +921,7 @@
     "fecha": "2018-11-02",
     "imagen": "http://localhost:8080/Imagenes/A-Ningun-Hombre.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=KYCTUEnB5yI"]
   },
   {
     "titulo": "De Tú a Tú",
@@ -930,7 +930,7 @@
     "fecha": "2022-03-03",
     "imagen": "http://localhost:8080/Imagenes/De-Tu-a-Tu.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=3DDaLZYvHFg"]
   },
   {
     "titulo": "Algodón",
@@ -939,7 +939,7 @@
     "fecha": "2023-08-18",
     "imagen": "http://localhost:8080/Imagenes/Algodon.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=HqcmjhGp1Jc"]
   },
   {
     "titulo": "Aquí Sigo",
@@ -948,7 +948,7 @@
     "fecha": "2021-10-15",
     "imagen": "http://localhost:8080/Imagenes/Aqui-Sigo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=FL4gkL0zzCc"]
   },
   {
     "titulo": "5 Estrellas",
@@ -957,7 +957,7 @@
     "fecha": "2023-02-14",
     "imagen": "http://localhost:8080/Imagenes/5-Estrellas.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=UzXeiLPgDGo"]
   },
   {
     "titulo": "Se Fue la Luz",
@@ -966,7 +966,7 @@
     "fecha": "2023-05-26",
     "imagen": "http://localhost:8080/Imagenes/Se-Fue-la-Luz.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=pa_sx7qNjU0"]
   },
   {
     "titulo": "El Padrino",
@@ -975,6 +975,6 @@
     "fecha": "2024-04-04",
     "imagen": "http://localhost:8080/Imagenes/El-Padrino.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Z_2jq6kGe9s"]
   }
 ]
