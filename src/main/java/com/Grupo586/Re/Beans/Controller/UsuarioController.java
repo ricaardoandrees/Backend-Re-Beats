@@ -230,10 +230,10 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
         }
     }
+
     @PostMapping("/CrearPlaylist")
     public ResponseEntity<String> CrearPlaylist(@RequestParam("usuario") String usuarioNombre,
-                                                @RequestParam("descripcion") String descripcionPlaylist,
-                                                @RequestParam("canciones") List<String> cancionesTitulos) {
+                                                @RequestParam("descripcion") String descripcionPlaylist) {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
@@ -241,13 +241,10 @@ public class UsuarioController {
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Usuario usuarioEncontrado = null;
-            for (Usuario u : usuarios) {
-                if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
-                    usuarioEncontrado = u;
-                    break;
-                }
-            }
+            Usuario usuarioEncontrado = usuarios.stream()
+                    .filter(u -> u.getNombre().equalsIgnoreCase(usuarioNombre))
+                    .findFirst()
+                    .orElse(null);
 
 
             if (usuarioEncontrado == null) {
@@ -256,29 +253,9 @@ public class UsuarioController {
             }
 
 
-            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
-            Type songListType = new TypeToken<List<Cancion>>() {}.getType();
-            List<Cancion> cancionesDisponibles = gson.fromJson(cancionesData, songListType);
+            Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado.getNombre(), new ArrayList<>());
 
 
-            List<Cancion> cancionesValidas = new ArrayList<>();
-            for (String titulo : cancionesTitulos) {
-                for (Cancion c : cancionesDisponibles) {
-                    if (c.getTitulo().equalsIgnoreCase(titulo)) {
-                        cancionesValidas.add(c);
-                        break;
-                    }
-                }
-            }
-
-
-            if (cancionesValidas.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                        .body("{\"error\":\"Ninguna canción válida encontrada\"}");
-            }
-
-
-            Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, usuarioEncontrado.getNombre(), new ArrayList<>(cancionesValidas));
             usuarioEncontrado.getPlaylists().add(nuevaPlaylist);
 
 
