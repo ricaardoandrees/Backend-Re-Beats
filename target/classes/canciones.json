@@ -6,7 +6,7 @@
     "fecha": "2025-05-22",
     "imagen": "static/Imagenes/Bandida.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=QbeH0UxTutQ&utm_source=chatgpt.com"]
   },
   {
     "titulo": "Aurora",
@@ -15,7 +15,7 @@
     "fecha": "2025-05-16",
     "imagen": "static/Imagenes/Aurora.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=2AHTcTLzcZE&utm_source=chatgpt.com"]
   },
   {
     "titulo": "Rapido",
@@ -24,7 +24,7 @@
     "fecha": "2022-06-01",
     "imagen": "static/Imagenes/Rapido.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=uU9Jor-8w1I"]
   },
   {
     "titulo": "Ultimas Palabras",
@@ -33,7 +33,7 @@
     "fecha": "2020-02-27",
     "imagen": "static/Imagenes/Ultimas-Palabras.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=wJhWVji4rhw"]
   },
   {
     "titulo": "Luna",
@@ -42,7 +42,7 @@
     "fecha": "2017-04-01",
     "imagen": "static/Imagenes/Luna.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=nMO4xLyqiAU"]
   },
   {
     "titulo": "3D",
@@ -51,7 +51,7 @@
     "fecha": "2024-07-12",
     "imagen": "static/Imagenes/3D.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=MYTGsOSxGjs"]
   },
   {
     "titulo": "Flores en Anonimo",
@@ -60,7 +60,7 @@
     "fecha": "2021-01-01",
     "imagen": "static/Imagenes/Flores-en-Anonimo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Aco1BiMF5t8"]
   },
   {
     "titulo": "Fecha",
@@ -69,7 +69,7 @@
     "fecha": "2024-04-10",
     "imagen": "static/Imagenes/Fecha.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=4F0cCKFac04"]
   },
   {
     "titulo": "Me Late",
@@ -78,97 +78,97 @@
     "fecha": "2024-12-24",
     "imagen": "static/Imagenes/Me-Late.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=C0YEySju7-4"]
   },
   {
     "titulo": "Si Te Pillara",
     "autor": "Beéle",
     "genero": "Urbano",
     "fecha": "2025-05-15",
-    "imagen": "static/Imagenes/Si-Te-Pillara",
+    "imagen": "static/Imagenes/Si-Te-Pillara.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=LDlmSpNkcIw"]
   },
   {
     "titulo": "Frente al Mar",
     "autor": "Beéle",
     "genero": "Urbano",
     "fecha": "2024-09-27",
-    "imagen": "static/Imagenes/Frente-al-Mar",
+    "imagen": "static/Imagenes/Frente-al-Mar.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=aEP-63CApZI"]
   },
   {
     "titulo": "777",
     "autor": "Joji",
     "genero": "R&B/Soul",
     "fecha": "2020-09-25",
-    "imagen": "static/Imagenes/777",
+    "imagen": "static/Imagenes/777.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=HLetFEpgPgY"]
   },
   {
     "titulo": "Aguante",
     "autor": "Feid",
     "genero": "Urbano",
     "fecha": "2022-09-14",
-    "imagen": "static/Imagenes/Aguante",
+    "imagen": "static/Imagenes/Aguante.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Qq5QJxZaZTI"]
   },
   {
     "titulo": "Vacile",
     "autor": "Yan Block",
     "genero": "Urbano",
     "fecha": "2022-09-30",
-    "imagen": "static/Imagenes/Vacile",
+    "imagen": "static/Imagenes/Vacile.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=gAuskfcfXKQ"]
   },
   {
     "titulo": "Peli de Terror",
     "autor": "Lara91k & Alvaro Diaz",
     "genero": "Urbano",
     "fecha": "2024-04-01",
-    "imagen": "static/Imagenes/Peli-de-Terror",
+    "imagen": "static/Imagenes/Peli-de-Terror.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=FrgMlADdnnc"]
   },
   {
     "titulo": "Poses",
     "autor": "Guitarricadelafuente",
     "genero": "Indie",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Poses",
+    "imagen": "static/Imagenes/Poses.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=6QSDIevJdic"]
   },
   {
     "titulo": "Super",
     "autor": "BB Trickz",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Super",
+    "imagen": "static/Imagenes/Super.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=zvVUfbzLRZ0"]
   },
   {
     "titulo": "Flor de Caramelo",
     "autor": "Guitarricadelafuente",
     "genero": "Indie",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Flor-de-Caramelo",
+    "imagen": "static/Imagenes/Flor-de-Caramelo.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=MIQnEItz5NU"]
   },
   {
     "titulo": "Cienciaficcion",
     "autor": "NQSK",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Cienciaficcion",
+    "imagen": "static/Imagenes/Cienciaficcion.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=8_YEiDpUlwM"]
   },
   {
     "titulo": "Neo Romeo",
@@ -177,282 +177,283 @@
     "fecha": "2024-06-22",
     "imagen": "static/Imagenes/Neo-Romeo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=uEXDe_3WfUQ"]
   },
   {
     "titulo": "Pa Quererte",
     "autor": "Rels B",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Pa-Quererte",
+    "imagen": "static/Imagenes/Pa-Quererte.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=8bcWXxMifNQ"]
   },
   {
     "titulo": "Te Pongo Mal",
     "autor": "Kali Uchis",
     "genero": "R&B",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Te-Pongo-Mal",
+    "imagen": "static/Imagenes/Te-Pongo-Mal.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=OZqFfG7b9A8"]
   },
   {
     "titulo": "Mala Buena Suerte",
     "autor": "Latin Mafia",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Mala-Buena-Suerte",
+    "imagen": "static/Imagenes/Mala-Buena-Suerte.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=iIzwN1ltMbA"]
   },
   {
     "titulo": "Canijo",
     "autor": "Judeline",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Canijo",
+    "imagen": "static/Imagenes/Canijo.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=NFzCk-HBBAQ"]
   },
   {
     "titulo": "Amate",
     "autor": "MicroTDH",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Amate",
+    "imagen": "static/Imagenes/Amate.jpg",
     "comentarios": [],
-    "links": []
-  },{
+    "links": ["https://www.youtube.com/watch?v=i9FDzVTRRuI"]
+  },
+  {
   "titulo": "Badwine",
   "autor": "Feid & Lenny Tavárez",
   "genero": "Reggaetón",
   "fecha": "2019-07-23",
-  "imagen": "static/Imagenes/Badwine",
+  "imagen": "static/Imagenes/Badwine.jpg",
   "comentarios": [],
-  "links": []
+  "links": ["https://www.youtube.com/watch?v=49M9KxQZKkM"]
 },
   {
     "titulo": "Sobrepensándote",
     "autor": "LAGOS",
     "genero": "Pop",
     "fecha": "2024-05-16",
-    "imagen": "static/Imagenes/Sobrepensandote",
+    "imagen": "static/Imagenes/Sobrepensandote.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=9R7MjGQAoFw"]
   },
   {
     "titulo": "Perlas",
     "autor": "Latin Mafia",
     "genero": "Urbano",
     "fecha": "2022-01-01",
-    "imagen": "static/Imagenes/Perlas",
+    "imagen": "static/Imagenes/Perlas.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=Elkk1IoAEQ4"]
   },
   {
     "titulo": "Contacto Cero",
     "autor": "Matisse & LAGOS",
     "genero": "Pop",
     "fecha": "2024-08-23",
-    "imagen": "static/Imagenes/Contacto-Cero",
+    "imagen": "static/Imagenes/Contacto-Cero.png",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=H4vTy_ScR9A"]
   },
   {
     "titulo": "Nota",
     "autor": "Jay Wheeler & Omar Courtz",
     "genero": "Urbano",
     "fecha": "2025-04-04",
-    "imagen": "static/Imagenes/Nota",
+    "imagen": "static/Imagenes/Nota.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=kCHUbcjQ20c"]
   },
   {
     "titulo": "Priti",
     "autor": "Danny Ocean & Sech",
     "genero": "Urbano",
     "fecha": "2025-03-10",
-    "imagen": "static/Imagenes/Priti",
+    "imagen": "static/Imagenes/Priti.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=2wlVXgtpFf4"]
   },
   {
     "titulo": "Ron",
     "autor": "Feid & Dalex",
     "genero": "Reggaetón",
     "fecha": "2019-09-25",
-    "imagen": "static/Imagenes/Ron",
+    "imagen": "static/Imagenes/Ron.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=LeTiV7EY2sM"]
   },
   {
     "titulo": "Casino",
     "autor": "Sech",
     "genero": "Urbano",
     "fecha": "2020-05-21",
-    "imagen": "static/Imagenes/Casino",
+    "imagen": "static/Imagenes/Casino.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=_GJ5Z6BObAg"]
   },
   {
     "titulo": "Hielo",
     "autor": "Eladio Carrión",
     "genero": "Trap Latino",
     "fecha": "2020-01-01",
-    "imagen": "static/Imagenes/Hielo",
+    "imagen": "static/Imagenes/Hielo.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=vf0eR6ULzMw"]
   },
   {
     "titulo": "Nubes",
     "autor": "De La Rose & Omar Courtz",
     "genero": "House",
     "fecha": "2025-04-03",
-    "imagen": "static/Imagenes/Nubes",
+    "imagen": "static/Imagenes/Nubes.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=7klJHcyp1Sc"]
   },
   {
     "titulo": "Halo",
     "autor": "Quevedo & La Pantera",
     "genero": "Urbano",
     "fecha": "2025-01-09",
-    "imagen": "static/Imagenes/Halo",
+    "imagen": "static/Imagenes/Halo.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=4DKP-6JE5Fs"]
   },
   {
     "titulo": "En el Olvido",
     "autor": "Omar Apollo",
     "genero": "Pop",
     "fecha": "2022-04-08",
-    "imagen": "static/Imagenes/En-el-Olvido",
+    "imagen": "static/Imagenes/En-el-Olvido.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=g2jYB9Wv2RM"]
   },
   {
     "titulo": "Tu Falta de Querer",
     "autor": "Mon Laferte",
     "genero": "Balada Pop",
     "fecha": "2015-10-14",
-    "imagen": "static/Imagenes/Tu-Falta-de-Querer",
+    "imagen": "static/Imagenes/Tu-Falta-de-Querer.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=9Q8yL3GzI5I"]
   },
   {
     "titulo": "Despacito",
     "autor": "Luis Fonsi & Daddy Yankee",
     "genero": "Reggaetón",
     "fecha": "2017-01-13",
-    "imagen": "static/Imagenes/Despacito",
+    "imagen": "static/Imagenes/Despacito.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=kJQP7kiw5Fk"]
   },
   {
     "titulo": "Kloufrens",
     "autor": "Bad Bunny",
     "genero": "Trap",
     "fecha": "2025-01-05",
-    "imagen": "static/Imagenes/Kloufrens",
+    "imagen": "static/Imagenes/Kloufrens.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=1PiJpDPZISg"]
   },
   {
     "titulo": "Turista",
     "autor": "Bad Bunny",
     "genero": "Trap",
     "fecha": "2025-01-05",
-    "imagen": "static/Imagenes/Turista",
+    "imagen": "static/Imagenes/Turista.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=EDb_6-1KZow"]
   },
   {
     "titulo": "Sentado Aquí",
     "autor": "Latin Mafia",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Sentado-Aqui",
+    "imagen": "static/Imagenes/Sentado-Aqui.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=xaTgB5W0ofU"]
   },
   {
     "titulo": "Pensándote",
     "autor": "Rauw Alejandro",
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Pensandote",
+    "imagen": "static/Imagenes/Pensandote.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=bXCUFG4a5T4"]
   },
   {
     "titulo": "Un Verano Sin Ti",
     "autor": "Bad Bunny",
     "genero": "Reggaetón",
     "fecha": "2022-05-06",
-    "imagen": "static/Imagenes/Un-Verano-Sin-Ti",
+    "imagen": "static/Imagenes/Un-Verano-Sin-Ti.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=wYiYvabfyaY"]
   },
   {
     "titulo": "Amaneció",
     "autor": "Quevedo",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Amanecio",
+    "imagen": "static/Imagenes/Amanecio.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=EcO2S8fOGeE"]
   },
   {
     "titulo": "Segundos Platos",
     "autor": "Morat",
     "genero": "Pop Rock",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Segundos-Platos",
+    "imagen": "static/Imagenes/Segundos-Platos.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=RG7idQb7ElE"]
   },
   {
     "titulo": "Dime Cómo Tú Quieras",
     "autor": "Los Mesoneros",
     "genero": "Rock Alternativo",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Dime-Como-Tu-Quieras",
+    "imagen": "static/Imagenes/Dime-Como-Tu-Quieras.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=E-G3HZdz3Hg"]
   },
   {
     "titulo": "Me Extrañas",
     "autor": "Jhayco",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Me-Extrañas",
+    "imagen": "static/Imagenes/Me-Extrañas.jpeg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=kL2mErR8yOs"]
   },
   {
     "titulo": "Margaret",
     "autor": "Lana Del Rey",
     "genero": "Indie Pop",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Margaret",
+    "imagen": "static/Imagenes/Margaret.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=lzeBPgfbZOg"]
   },
   {
     "titulo": "Xq Eres Así",
     "autor": "Álvaro Díaz",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Xq-Eres-Asi",
+    "imagen": "static/Imagenes/Xq-Eres-Asi.jpg",
     "comentarios": [],
-    "links": []
+    "links": ["https://www.youtube.com/watch?v=avA7a7gNBw8"]
   },{
   "titulo": "Los Alpes",
   "autor": "Nsqk",
   "genero": "Pop alternativo",
   "fecha": "2024-08-01",
-  "imagen": "static/Imagenes/Los-Alpes",
+  "imagen": "static/Imagenes/Los-Alpes.jpg",
   "comentarios": [],
   "links": []
 },
@@ -461,7 +462,7 @@
     "autor": "Romeo Santos",
     "genero": "Bachata",
     "fecha": "2014-02-11",
-    "imagen": "static/Imagenes/Cancioncitas-de-Amor",
+    "imagen": "static/Imagenes/Cancioncitas-de-Amor.jpg",
     "comentarios": [],
     "links": []
   },
@@ -470,7 +471,7 @@
     "autor": "Rauw Alejandro",
     "genero": "Synth-pop",
     "fecha": "2021-08-10",
-    "imagen": "static/Imagenes/Desenfocao",
+    "imagen": "static/Imagenes/Desenfocao.jpg",
     "comentarios": [],
     "links": []
   },
@@ -479,7 +480,7 @@
     "autor": "Feid",
     "genero": "Reggaetón",
     "fecha": "2020-01-01",
-    "imagen": "static/Imagenes/Nea",
+    "imagen": "static/Imagenes/Nea.jpg",
     "comentarios": [],
     "links": []
   },
@@ -488,7 +489,7 @@
     "autor": "Young Cister",
     "genero": "Urbano",
     "fecha": "2024-06-13",
-    "imagen": "static/Imagenes/Miau",
+    "imagen": "static/Imagenes/Miau.jpg",
     "comentarios": [],
     "links": []
   },
@@ -497,7 +498,7 @@
     "autor": "Cruz Cafuné",
     "genero": "Hip hop",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Cangrinaje",
+    "imagen": "static/Imagenes/Cangrinaje.jpg",
     "comentarios": [],
     "links": []
   },
@@ -506,7 +507,7 @@
     "autor": "C. Tangana & Nathy Peluso",
     "genero": "Bachata",
     "fecha": "2021-10-08",
-    "imagen": "static/Imagenes/Ateo",
+    "imagen": "static/Imagenes/Ateo.jpg",
     "comentarios": [],
     "links": []
   },
@@ -515,7 +516,7 @@
     "autor": "C. Tangana",
     "genero": "Rap",
     "fecha": "2020-10-08",
-    "imagen": "static/Imagenes/Demasiadas-Mujeres",
+    "imagen": "static/Imagenes/Demasiadas-Mujeres.jpg",
     "comentarios": [],
     "links": []
   },
@@ -524,7 +525,7 @@
     "autor": "Rosalía",
     "genero": "Pop",
     "fecha": "2022-03-18",
-    "imagen": "static/Imagenes/Como-un-G",
+    "imagen": "static/Imagenes/Como-un-G.jpg",
     "comentarios": [],
     "links": []
   },
@@ -533,7 +534,7 @@
     "autor": "Feid",
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Velocidad-de-Crucero",
+    "imagen": "static/Imagenes/Velocidad-de-Crucero.jpg",
     "comentarios": [],
     "links": []
   },
@@ -542,7 +543,7 @@
     "autor": "Feid, Miky Woodz & Juhn",
     "genero": "Reggaetón",
     "fecha": "2022-01-01",
-    "imagen": "static/Imagenes/Enemigos",
+    "imagen": "static/Imagenes/Enemigos.jpg",
     "comentarios": [],
     "links": []
   },
@@ -551,7 +552,7 @@
     "autor": "Luis Miguel",
     "genero": "Balada",
     "fecha": "1989-02-20",
-    "imagen": "static/Imagenes/La-Incondicional",
+    "imagen": "static/Imagenes/La-Incondicional.jpg",
     "comentarios": [],
     "links": []
   },
@@ -560,7 +561,7 @@
     "autor": "Luis Miguel",
     "genero": "Balada",
     "fecha": "1993-08-09",
-    "imagen": "static/Imagenes/Hasta-que-me-olvides",
+    "imagen": "static/Imagenes/Hasta-que-me-olvides.jpg",
     "comentarios": [],
     "links": []
   },
@@ -569,7 +570,7 @@
     "autor": "Karol G",
     "genero": "Reggaetón",
     "fecha": "2022-08-25",
-    "imagen": "static/Imagenes/Gatubela",
+    "imagen": "static/Imagenes/Gatubela.jpg",
     "comentarios": [],
     "links": []
   },
@@ -578,7 +579,7 @@
     "autor": "Alejo",
     "genero": "Urbano",
     "fecha": "2024-01-01",
-    "imagen": "static/Imagenes/Cosmo",
+    "imagen": "static/Imagenes/Cosmo.jpg",
     "comentarios": [],
     "links": []
   },
@@ -587,7 +588,7 @@
     "autor": "Álvaro Díaz",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Sin-Poderes",
+    "imagen": "static/Imagenes/Sin-Poderes.jpg",
     "comentarios": [],
     "links": []
   },
@@ -596,7 +597,7 @@
     "autor": "Young Cister",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Bellaka",
+    "imagen": "static/Imagenes/Bellaka.jpg",
     "comentarios": [],
     "links": []
   },
@@ -605,7 +606,7 @@
     "autor": "Rauw Alejandro",
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Problemon",
+    "imagen": "static/Imagenes/Problemon.jpg",
     "comentarios": [],
     "links": []
   },
@@ -614,7 +615,7 @@
     "autor": "Alejo",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Noches-de-Mas",
+    "imagen": "static/Imagenes/Noches-de-Mas.jpg",
     "comentarios": [],
     "links": []
   },
@@ -623,7 +624,7 @@
     "autor": "Danny Ocean",
     "genero": "Pop",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Ferrari",
+    "imagen": "static/Imagenes/Ferrari.jpg",
     "comentarios": [],
     "links": []
   },
@@ -632,7 +633,7 @@
     "autor": "Danny Ocean",
     "genero": "Pop",
     "fecha": "2016-09-16",
-    "imagen": "static/Imagenes/Me-Rehuso",
+    "imagen": "static/Imagenes/Me-Rehuso.jpg",
     "comentarios": [],
     "links": []
   },
@@ -641,7 +642,7 @@
     "autor": "Danny Ocean",
     "genero": "Pop",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Ley-Universal",
+    "imagen": "static/Imagenes/Ley-Universal.jpg",
     "comentarios": [],
     "links": []
   },
@@ -650,7 +651,7 @@
     "autor": "Saiko",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/3-Caidas",
+    "imagen": "static/Imagenes/3-Caidas.jpg",
     "comentarios": [],
     "links": []
   },
@@ -659,7 +660,7 @@
     "autor": "Los Mesoneros",
     "genero": "Rock Alternativo",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Diciembre",
+    "imagen": "static/Imagenes/Diciembre.jpg",
     "comentarios": [],
     "links": []
   },
@@ -668,7 +669,7 @@
     "autor": "Shakira",
     "genero": "Pop",
     "fecha": "1995-10-17",
-    "imagen": "static/Imagenes/Antologia",
+    "imagen": "static/Imagenes/Antologia.jpg",
     "comentarios": [],
     "links": []
   },{
@@ -676,7 +677,7 @@
   "autor": "Omar Apollo",
   "genero": "R&B alternativo",
   "fecha": "2023-10-04",
-  "imagen": "static/Imagenes/Frio",
+  "imagen": "static/Imagenes/Frio.jpg",
   "comentarios": [],
   "links": []
 },
@@ -685,13 +686,13 @@
     "autor": "Lyanno",
     "genero": "Reggaetón",
     "fecha": "2022-08-04",
-    "imagen": "static/Imagenes/Que-Somos",
+    "imagen": "static/Imagenes/Que-Somos.jpg",
     "comentarios": [],
     "links": []
   },
   {
     "titulo": "Gata",
-    "autor": "Ralphie Choo",
+    "autor": "Ralphie Choo.jpg",
     "genero": "Pop experimental",
     "fecha": "2023-09-14",
     "imagen": "static/Imagenes/Gata",
@@ -703,7 +704,7 @@
     "autor": "Ralphie Choo",
     "genero": "Pop alternativo",
     "fecha": "2023-09-14",
-    "imagen": "static/Imagenes/Voy-con-Todo",
+    "imagen": "static/Imagenes/Voy-con-Todo.jpg",
     "comentarios": [],
     "links": []
   },
@@ -712,7 +713,7 @@
     "autor": "Bad Bunny",
     "genero": "Reggaetón",
     "fecha": "2020-05-29",
-    "imagen": "static/Imagenes/Una-Vez",
+    "imagen": "static/Imagenes/Una-Vez.jpg",
     "comentarios": [],
     "links": []
   },
@@ -721,7 +722,7 @@
     "autor": "Alejo",
     "genero": "Urbano",
     "fecha": "2023-06-01",
-    "imagen": "static/Imagenes/Como-Estas",
+    "imagen": "static/Imagenes/Como-Estas.jpg",
     "comentarios": [],
     "links": []
   },
@@ -730,7 +731,7 @@
     "autor": "C. Tangana",
     "genero": "Trap",
     "fecha": "2017-06-02",
-    "imagen": "static/Imagenes/Mala-Mujer",
+    "imagen": "static/Imagenes/Mala-Mujer.jpg",
     "comentarios": [],
     "links": []
   },
@@ -739,7 +740,7 @@
     "autor": "Kali Uchis",
     "genero": "Pop",
     "fecha": "2024-01-11",
-    "imagen": "static/Imagenes/Igual-que-un-Angel",
+    "imagen": "static/Imagenes/Igual-que-un-Angel.jpg",
     "comentarios": [],
     "links": []
   },
@@ -748,7 +749,7 @@
     "autor": "Romeo Santos",
     "genero": "Bachata",
     "fecha": "2011-11-08",
-    "imagen": "static/Imagenes/Necio",
+    "imagen": "static/Imagenes/Necio.jpg",
     "comentarios": [],
     "links": []
   },
@@ -757,7 +758,7 @@
     "autor": "Los Mesoneros",
     "genero": "Rock alternativo",
     "fecha": "2020-08-07",
-    "imagen": "static/Imagenes/El-Paraiso",
+    "imagen": "static/Imagenes/El-Paraiso.jpg",
     "comentarios": [],
     "links": []
   },
@@ -766,7 +767,7 @@
     "autor": "Saiko",
     "genero": "Urbano",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Cosas-Que-No-Te-Dije",
+    "imagen": "static/Imagenes/Cosas-Que-No-Te-Dije.jpg",
     "comentarios": [],
     "links": []
   },
@@ -775,7 +776,7 @@
     "autor": "Los Mesoneros",
     "genero": "Rock alternativo",
     "fecha": "2020-08-07",
-    "imagen": "static/Imagenes/Solo",
+    "imagen": "static/Imagenes/Solo.jpg",
     "comentarios": [],
     "links": []
   },
@@ -784,7 +785,7 @@
     "autor": "Judeline",
     "genero": "Electropop",
     "fecha": "2022-10-28",
-    "imagen": "static/Imagenes/Si-Preguntas-por-Mi",
+    "imagen": "static/Imagenes/Si-Preguntas-por-Mi.jpg",
     "comentarios": [],
     "links": []
   },
@@ -793,16 +794,16 @@
     "autor": "Bad Bunny",
     "genero": "Trap latino",
     "fecha": "2023-10-13",
-    "imagen": "static/Imagenes/Monaco",
+    "imagen": "static/Imagenes/Monaco.jpg",
     "comentarios": [],
     "links": []
   },
   {
-    "titulo": "Mss Humano",
+    "titulo": "Mas Humano",
     "autor": "Latin Mafia",
     "genero": "Pop alternativo",
     "fecha": "2023-01-01",
-    "imagen": "static/Imagenes/Mss-Humano",
+    "imagen": "static/Imagenes/Mas-Humano.jpg",
     "comentarios": [],
     "links": []
   },
@@ -811,7 +812,7 @@
     "autor": "Álvaro Díaz",
     "genero": "Hip hop latino",
     "fecha": "2023-11-10",
-    "imagen": "static/Imagenes/Yoko",
+    "imagen": "static/Imagenes/Yoko.jpg",
     "comentarios": [],
     "links": []
   },
@@ -820,7 +821,7 @@
     "autor": "Quevedo",
     "genero": "Trap",
     "fecha": "2023-07-07",
-    "imagen": "static/Imagenes/Columbia",
+    "imagen": "static/Imagenes/Columbia.jpg",
     "comentarios": [],
     "links": []
   },
@@ -829,7 +830,7 @@
     "autor": "Daniel, Me Estás Matando",
     "genero": "Bolero pop",
     "fecha": "2023-03-24",
-    "imagen": "static/Imagenes/Es-Verdad",
+    "imagen": "static/Imagenes/Es-Verdad.jpg",
     "comentarios": [],
     "links": []
   },
@@ -838,7 +839,7 @@
     "autor": "C. Tangana",
     "genero": "Pop",
     "fecha": "2020-04-23",
-    "imagen": "static/Imagenes/Nunca-Estoy",
+    "imagen": "static/Imagenes/Nunca-Estoy.jpg",
     "comentarios": [],
     "links": []
   },
@@ -847,7 +848,7 @@
     "autor": "Morat",
     "genero": "Pop",
     "fecha": "2022-11-04",
-    "imagen": "static/Imagenes/Primeras-Veces",
+    "imagen": "static/Imagenes/Primeras-Veces.jpg",
     "comentarios": [],
     "links": []
   },
@@ -856,7 +857,7 @@
     "autor": "Morat",
     "genero": "Pop",
     "fecha": "2015-06-16",
-    "imagen": "static/Imagenes/No-Se-Va",
+    "imagen": "static/Imagenes/No-Se-Va.jpg",
     "comentarios": [],
     "links": []
   },
@@ -865,7 +866,7 @@
     "autor": "Jhayco",
     "genero": "Trap latino",
     "fecha": "2023-08-11",
-    "imagen": "static/Imagenes/Holanda",
+    "imagen": "static/Imagenes/Holanda.jpg",
     "comentarios": [],
     "links": []
   },
@@ -874,7 +875,7 @@
     "autor": "Julieta Venegas",
     "genero": "Pop rock",
     "fecha": "2006-03-14",
-    "imagen": "static/Imagenes/Me-Voy",
+    "imagen": "static/Imagenes/Me-Voy.jpg",
     "comentarios": [],
     "links": []
   },
@@ -883,7 +884,7 @@
     "autor": "Lagos",
     "genero": "Pop",
     "fecha": "2022-03-24",
-    "imagen": "static/Imagenes/Quien-lo-Diria",
+    "imagen": "static/Imagenes/Quien-lo-Diria.jpg",
     "comentarios": [],
     "links": []
   },
@@ -892,7 +893,7 @@
     "autor": "Tainy",
     "genero": "Electrónica urbana",
     "fecha": "2023-06-29",
-    "imagen": "static/Imagenes/Todavia",
+    "imagen": "static/Imagenes/Todavia.jpg",
     "comentarios": [],
     "links": []
   },{
@@ -900,7 +901,7 @@
   "autor": "Anakena",
   "genero": "Pop tropical",
   "fecha": "2023-06-09",
-  "imagen": "static/Imagenes/Para-Cenar",
+  "imagen": "static/Imagenes/Para-Cenar.jpg",
   "comentarios": [],
   "links": []
 },
@@ -909,7 +910,7 @@
     "autor": "Rawayana",
     "genero": "Alternativa",
     "fecha": "2021-07-23",
-    "imagen": "static/Imagenes/Feriado",
+    "imagen": "static/Imagenes/Feriado.jpg",
     "comentarios": [],
     "links": []
   },
@@ -918,7 +919,7 @@
     "autor": "Rosalía",
     "genero": "Flamenco experimental",
     "fecha": "2018-11-02",
-    "imagen": "static/Imagenes/A-Ningun-Hombre",
+    "imagen": "static/Imagenes/A-Ningun-Hombre.jpg",
     "comentarios": [],
     "links": []
   },
@@ -927,7 +928,7 @@
     "autor": "Lasso",
     "genero": "Pop latino",
     "fecha": "2022-03-03",
-    "imagen": "static/Imagenes/De-Tu-a-Tu",
+    "imagen": "static/Imagenes/De-Tu-a-Tu.jpg",
     "comentarios": [],
     "links": []
   },
@@ -936,7 +937,7 @@
     "autor": "Lasso",
     "genero": "Pop",
     "fecha": "2023-08-18",
-    "imagen": "static/Imagenes/Algodon",
+    "imagen": "static/Imagenes/Algodon.jpg",
     "comentarios": [],
     "links": []
   },
@@ -945,7 +946,7 @@
     "autor": "3AM",
     "genero": "Indie pop",
     "fecha": "2021-10-15",
-    "imagen": "static/Imagenes/Aqui-Sigo",
+    "imagen": "static/Imagenes/Aqui-Sigo.jpg",
     "comentarios": [],
     "links": []
   },
@@ -954,7 +955,7 @@
     "autor": "Marc Seguí",
     "genero": "Pop alternativo",
     "fecha": "2023-02-14",
-    "imagen": "static/Imagenes/5-Estrellas",
+    "imagen": "static/Imagenes/5-Estrellas.jpg",
     "comentarios": [],
     "links": []
   },
@@ -963,7 +964,7 @@
     "autor": "Latin Mafia",
     "genero": "Pop alternativo",
     "fecha": "2023-05-26",
-    "imagen": "static/Imagenes/Se-Fue-la-Luz",
+    "imagen": "static/Imagenes/Se-Fue-la-Luz.jpg",
     "comentarios": [],
     "links": []
   },
