@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ReBeansApplication<Re-Beans>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Grupo586.Re.Beans.ReBeansApplication",
+            "projectName": "Re-Beans",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
