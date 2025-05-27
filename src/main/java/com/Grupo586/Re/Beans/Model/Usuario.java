@@ -5,18 +5,18 @@ import java.util.ArrayList;
 public class Usuario extends Persona{
 
   Integer ID;
-  ArrayList<Usuario> Amigos;
+  ArrayList<String> Amigos;
   ArrayList<Playlist> Playlists;
   
   public Usuario() {
     super(null, null);
   }
 
-  public Usuario(String nombre, String clave, ArrayList<Usuario> amigos, ArrayList<Playlist> playlists, Integer ID) {
+  public Usuario(String nombre, String clave, ArrayList<String> amigos, ArrayList<Playlist> playlists, Integer ID) {
     super( nombre, clave);
 
     if (amigos == null) {
-      this.Amigos = new ArrayList<Usuario>();
+      this.Amigos = new ArrayList<String>();
     } else {
       this.Amigos = amigos;
     }
@@ -38,11 +38,11 @@ public class Usuario extends Persona{
     this.ID = ID;
   }
 
-  public ArrayList<Usuario> getAmigos() {
+  public ArrayList<String> getAmigos() {
     return Amigos;
   }
 
-  public void setAmigos(ArrayList<Usuario> amigos) {
+  public void setAmigos(ArrayList<String> amigos) {
     Amigos = amigos;
   }
 
