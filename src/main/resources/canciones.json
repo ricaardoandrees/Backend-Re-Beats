@@ -5,17 +5,102 @@
     "genero": "Urbano",
     "fecha": "2025-05-22",
     "imagen": "http://localhost:8080/Imagenes/Bandida.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=QbeH0UxTutQ&utm_source=chatgpt.com"]
+    "comentarios": [
+      {
+        "comentario": "Me encanta esta canción",
+        "usuario": {
+          "ID": 4,
+          "Amigos": [],
+          "Playlists": [
+            {
+              "Descripcion": "Mi nueva playlist",
+              "Propietario": "Jharold",
+              "Canciones": [
+                {
+                  "titulo": "Neo Romeo",
+                  "autor": "Latin Mafia,rusowsky",
+                  "genero": "R\u0026B",
+                  "fecha": "2024-07-23",
+                  "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpeg"
+                },
+                {
+                  "titulo": "Babysita \u003c/3",
+                  "autor": "Alvaro Diaz",
+                  "genero": "Pop",
+                  "fecha": "2021-10-29",
+                  "imagen": "http://localhost:8080/Imagenes/Bellaka.jpg"
+                }
+              ]
+            }
+          ],
+          "nombre": "Jharold",
+          "clave": "7689"
+        },
+        "fecha": "2025-05-27T00:26:36.936594100"
+      },
+      {
+        "comentario": "Me encanta esta canción",
+        "usuario": {
+          "ID": 4,
+          "Amigos": [],
+          "Playlists": [
+            {
+              "Descripcion": "Mi nueva playlist",
+              "Propietario": "Jharold",
+              "Canciones": [
+                {
+                  "titulo": "Neo Romeo",
+                  "autor": "Latin Mafia,rusowsky",
+                  "genero": "R\u0026B",
+                  "fecha": "2024-07-23",
+                  "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpeg"
+                },
+                {
+                  "titulo": "Babysita \u003c/3",
+                  "autor": "Alvaro Diaz",
+                  "genero": "Pop",
+                  "fecha": "2021-10-29",
+                  "imagen": "http://localhost:8080/Imagenes/Bellaka.jpg"
+                }
+              ]
+            }
+          ],
+          "nombre": "Jharold",
+          "clave": "7689"
+        },
+        "fecha": "2025-05-27T00:26:36.936594100"
+      },
+      {
+        "comentario": "Meh",
+        "usuario": {
+          "ID": 1,
+          "Amigos": [],
+          "Playlists": [],
+          "nombre": "Ricardo",
+          "clave": "ricardo456"
+        },
+        "fecha": "2025-05-27T00:26:52.979758900"
+      },
+      {
+        "comentario": "Meh",
+        "usuario": {
+          "ID": 1,
+          "Amigos": [],
+          "Playlists": [],
+          "nombre": "Ricardo",
+          "clave": "ricardo456"
+        },
+        "fecha": "2025-05-27T00:26:52.979758900"
+      }
+    ]
   },
   {
     "titulo": "Aurora",
-    "autor": "Mora & De La Rose",
+    "autor": "Mora \u0026 De La Rose",
     "genero": "Urbano",
     "fecha": "2025-05-16",
     "imagen": "http://localhost:8080/Imagenes/Aurora.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=2AHTcTLzcZE&utm_source=chatgpt.com"]
+    "comentarios": []
   },
   {
     "titulo": "Rapido",
@@ -23,8 +108,94 @@
     "genero": "Urbano",
     "fecha": "2022-06-01",
     "imagen": "http://localhost:8080/Imagenes/Rapido.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=uU9Jor-8w1I"]
+    "comentarios": [
+      {
+        "comentario": "Increible",
+        "usuario": {
+          "ID": 1,
+          "Amigos": [],
+          "Playlists": [],
+          "nombre": "Ricardo",
+          "clave": "ricardo456"
+        },
+        "fecha": "2025-05-27T00:29:29.869057300"
+      },
+      {
+        "comentario": "Increible",
+        "usuario": {
+          "ID": 1,
+          "Amigos": [],
+          "Playlists": [],
+          "nombre": "Ricardo",
+          "clave": "ricardo456"
+        },
+        "fecha": "2025-05-27T00:29:29.869057300"
+      },
+      {
+        "comentario": "Increiblemente mala",
+        "usuario": {
+          "ID": 4,
+          "Amigos": [],
+          "Playlists": [
+            {
+              "Descripcion": "Mi nueva playlist",
+              "Propietario": "Jharold",
+              "Canciones": [
+                {
+                  "titulo": "Neo Romeo",
+                  "autor": "Latin Mafia,rusowsky",
+                  "genero": "R\u0026B",
+                  "fecha": "2024-07-23",
+                  "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpeg"
+                },
+                {
+                  "titulo": "Babysita \u003c/3",
+                  "autor": "Alvaro Diaz",
+                  "genero": "Pop",
+                  "fecha": "2021-10-29",
+                  "imagen": "http://localhost:8080/Imagenes/Bellaka.jpg"
+                }
+              ]
+            }
+          ],
+          "nombre": "Jharold",
+          "clave": "7689"
+        },
+        "fecha": "2025-05-27T00:29:42.579284700"
+      },
+      {
+        "comentario": "Increiblemente mala",
+        "usuario": {
+          "ID": 4,
+          "Amigos": [],
+          "Playlists": [
+            {
+              "Descripcion": "Mi nueva playlist",
+              "Propietario": "Jharold",
+              "Canciones": [
+                {
+                  "titulo": "Neo Romeo",
+                  "autor": "Latin Mafia,rusowsky",
+                  "genero": "R\u0026B",
+                  "fecha": "2024-07-23",
+                  "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpeg"
+                },
+                {
+                  "titulo": "Babysita \u003c/3",
+                  "autor": "Alvaro Diaz",
+                  "genero": "Pop",
+                  "fecha": "2021-10-29",
+                  "imagen": "http://localhost:8080/Imagenes/Bellaka.jpg"
+                }
+              ]
+            }
+          ],
+          "nombre": "Jharold",
+          "clave": "7689"
+        },
+        "fecha": "2025-05-27T00:29:42.579284700"
+      }
+    ]
   },
   {
     "titulo": "Ultimas Palabras",
@@ -32,8 +203,7 @@
     "genero": "Rock Alternativo",
     "fecha": "2020-02-27",
     "imagen": "http://localhost:8080/Imagenes/Ultimas-Palabras.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=wJhWVji4rhw"]
+    "comentarios": []
   },
   {
     "titulo": "Luna",
@@ -41,17 +211,15 @@
     "genero": "Rock Alternativo",
     "fecha": "2017-04-01",
     "imagen": "http://localhost:8080/Imagenes/Luna.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=nMO4xLyqiAU"]
+    "comentarios": []
   },
   {
     "titulo": "3D",
-    "autor": "Jhayco, Tivi Gunz & De La Rose",
+    "autor": "Jhayco, Tivi Gunz \u0026 De La Rose",
     "genero": "Urbano",
     "fecha": "2024-07-12",
     "imagen": "http://localhost:8080/Imagenes/3D.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=MYTGsOSxGjs"]
+    "comentarios": []
   },
   {
     "titulo": "Flores en Anonimo",
@@ -59,17 +227,15 @@
     "genero": "Trap Latino",
     "fecha": "2021-01-01",
     "imagen": "http://localhost:8080/Imagenes/Flores-en-Anonimo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Aco1BiMF5t8"]
+    "comentarios": []
   },
   {
     "titulo": "Fecha",
-    "autor": "Feid & Yandel",
+    "autor": "Feid \u0026 Yandel",
     "genero": "Reggaetón",
     "fecha": "2024-04-10",
     "imagen": "http://localhost:8080/Imagenes/Fecha.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=4F0cCKFac04"]
+    "comentarios": []
   },
   {
     "titulo": "Me Late",
@@ -77,8 +243,7 @@
     "genero": "Urbano",
     "fecha": "2024-12-24",
     "imagen": "http://localhost:8080/Imagenes/Me-Late.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=C0YEySju7-4"]
+    "comentarios": []
   },
   {
     "titulo": "Si Te Pillara",
@@ -86,8 +251,7 @@
     "genero": "Urbano",
     "fecha": "2025-05-15",
     "imagen": "http://localhost:8080/Imagenes/Si-Te-Pillara.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=LDlmSpNkcIw"]
+    "comentarios": []
   },
   {
     "titulo": "Frente al Mar",
@@ -95,17 +259,15 @@
     "genero": "Urbano",
     "fecha": "2024-09-27",
     "imagen": "http://localhost:8080/Imagenes/Frente-al-Mar.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=aEP-63CApZI"]
+    "comentarios": []
   },
   {
     "titulo": "777",
     "autor": "Joji",
-    "genero": "R&B/Soul",
+    "genero": "R\u0026B/Soul",
     "fecha": "2020-09-25",
     "imagen": "http://localhost:8080/Imagenes/777.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=HLetFEpgPgY"]
+    "comentarios": []
   },
   {
     "titulo": "Aguante",
@@ -113,8 +275,7 @@
     "genero": "Urbano",
     "fecha": "2022-09-14",
     "imagen": "http://localhost:8080/Imagenes/Aguante.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Qq5QJxZaZTI"]
+    "comentarios": []
   },
   {
     "titulo": "Vacile",
@@ -122,17 +283,15 @@
     "genero": "Urbano",
     "fecha": "2022-09-30",
     "imagen": "http://localhost:8080/Imagenes/Vacile.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=gAuskfcfXKQ"]
+    "comentarios": []
   },
   {
     "titulo": "Peli de Terror",
-    "autor": "Lara91k & Alvaro Diaz",
+    "autor": "Lara91k \u0026 Alvaro Diaz",
     "genero": "Urbano",
     "fecha": "2024-04-01",
     "imagen": "http://localhost:8080/Imagenes/Peli-de-Terror.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=FrgMlADdnnc"]
+    "comentarios": []
   },
   {
     "titulo": "Poses",
@@ -140,8 +299,7 @@
     "genero": "Indie",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Poses.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=6QSDIevJdic"]
+    "comentarios": []
   },
   {
     "titulo": "Super",
@@ -149,8 +307,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Super.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=zvVUfbzLRZ0"]
+    "comentarios": []
   },
   {
     "titulo": "Flor de Caramelo",
@@ -158,8 +315,7 @@
     "genero": "Indie",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Flor-de-Caramelo.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=MIQnEItz5NU"]
+    "comentarios": []
   },
   {
     "titulo": "Cienciaficcion",
@@ -167,8 +323,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cienciaficcion.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=8_YEiDpUlwM"]
+    "comentarios": []
   },
   {
     "titulo": "Neo Romeo",
@@ -176,8 +331,7 @@
     "genero": "Pop",
     "fecha": "2024-06-22",
     "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=uEXDe_3WfUQ"]
+    "comentarios": []
   },
   {
     "titulo": "Pa Quererte",
@@ -185,17 +339,15 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Pa-Quererte.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=8bcWXxMifNQ"]
+    "comentarios": []
   },
   {
     "titulo": "Te Pongo Mal",
     "autor": "Kali Uchis",
-    "genero": "R&B",
+    "genero": "R\u0026B",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Te-Pongo-Mal.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=OZqFfG7b9A8"]
+    "comentarios": []
   },
   {
     "titulo": "Mala Buena Suerte",
@@ -203,8 +355,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Mala-Buena-Suerte.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=iIzwN1ltMbA"]
+    "comentarios": []
   },
   {
     "titulo": "Canijo",
@@ -212,8 +363,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Canijo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=NFzCk-HBBAQ"]
+    "comentarios": []
   },
   {
     "titulo": "Amate",
@@ -221,26 +371,23 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Amate.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=i9FDzVTRRuI"]
+    "comentarios": []
   },
   {
-  "titulo": "Badwine",
-  "autor": "Feid & Lenny Tavárez",
-  "genero": "Reggaetón",
-  "fecha": "2019-07-23",
-  "imagen": "http://localhost:8080/Imagenes/Badwine.jpg",
-  "comentarios": [],
-  "links": ["https://www.youtube.com/watch?v=49M9KxQZKkM"]
-},
+    "titulo": "Badwine",
+    "autor": "Feid \u0026 Lenny Tavárez",
+    "genero": "Reggaetón",
+    "fecha": "2019-07-23",
+    "imagen": "http://localhost:8080/Imagenes/Badwine.jpg",
+    "comentarios": []
+  },
   {
     "titulo": "Sobrepensándote",
     "autor": "LAGOS",
     "genero": "Pop",
     "fecha": "2024-05-16",
     "imagen": "http://localhost:8080/Imagenes/Sobrepensandote.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=9R7MjGQAoFw"]
+    "comentarios": []
   },
   {
     "titulo": "Perlas",
@@ -248,44 +395,39 @@
     "genero": "Urbano",
     "fecha": "2022-01-01",
     "imagen": "http://localhost:8080/Imagenes/Perlas.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Elkk1IoAEQ4"]
+    "comentarios": []
   },
   {
     "titulo": "Contacto Cero",
-    "autor": "Matisse & LAGOS",
+    "autor": "Matisse \u0026 LAGOS",
     "genero": "Pop",
     "fecha": "2024-08-23",
     "imagen": "http://localhost:8080/Imagenes/Contacto-Cero.png",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=H4vTy_ScR9A"]
+    "comentarios": []
   },
   {
     "titulo": "Nota",
-    "autor": "Jay Wheeler & Omar Courtz",
+    "autor": "Jay Wheeler \u0026 Omar Courtz",
     "genero": "Urbano",
     "fecha": "2025-04-04",
     "imagen": "http://localhost:8080/Imagenes/Nota.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=kCHUbcjQ20c"]
+    "comentarios": []
   },
   {
     "titulo": "Priti",
-    "autor": "Danny Ocean & Sech",
+    "autor": "Danny Ocean \u0026 Sech",
     "genero": "Urbano",
     "fecha": "2025-03-10",
     "imagen": "http://localhost:8080/Imagenes/Priti.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=2wlVXgtpFf4"]
+    "comentarios": []
   },
   {
     "titulo": "Ron",
-    "autor": "Feid & Dalex",
+    "autor": "Feid \u0026 Dalex",
     "genero": "Reggaetón",
     "fecha": "2019-09-25",
     "imagen": "http://localhost:8080/Imagenes/Ron.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=LeTiV7EY2sM"]
+    "comentarios": []
   },
   {
     "titulo": "Casino",
@@ -293,8 +435,7 @@
     "genero": "Urbano",
     "fecha": "2020-05-21",
     "imagen": "http://localhost:8080/Imagenes/Casino.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=_GJ5Z6BObAg"]
+    "comentarios": []
   },
   {
     "titulo": "Hielo",
@@ -302,26 +443,23 @@
     "genero": "Trap Latino",
     "fecha": "2020-01-01",
     "imagen": "http://localhost:8080/Imagenes/Hielo.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=vf0eR6ULzMw"]
+    "comentarios": []
   },
   {
     "titulo": "Nubes",
-    "autor": "De La Rose & Omar Courtz",
+    "autor": "De La Rose \u0026 Omar Courtz",
     "genero": "House",
     "fecha": "2025-04-03",
     "imagen": "http://localhost:8080/Imagenes/Nubes.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=7klJHcyp1Sc"]
+    "comentarios": []
   },
   {
     "titulo": "Halo",
-    "autor": "Quevedo & La Pantera",
+    "autor": "Quevedo \u0026 La Pantera",
     "genero": "Urbano",
     "fecha": "2025-01-09",
     "imagen": "http://localhost:8080/Imagenes/Halo.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=4DKP-6JE5Fs"]
+    "comentarios": []
   },
   {
     "titulo": "En el Olvido",
@@ -329,8 +467,7 @@
     "genero": "Pop",
     "fecha": "2022-04-08",
     "imagen": "http://localhost:8080/Imagenes/En-el-Olvido.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=g2jYB9Wv2RM"]
+    "comentarios": []
   },
   {
     "titulo": "Tu Falta de Querer",
@@ -338,17 +475,15 @@
     "genero": "Balada Pop",
     "fecha": "2015-10-14",
     "imagen": "http://localhost:8080/Imagenes/Tu-Falta-de-Querer.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=9Q8yL3GzI5I"]
+    "comentarios": []
   },
   {
     "titulo": "Despacito",
-    "autor": "Luis Fonsi & Daddy Yankee",
+    "autor": "Luis Fonsi \u0026 Daddy Yankee",
     "genero": "Reggaetón",
     "fecha": "2017-01-13",
     "imagen": "http://localhost:8080/Imagenes/Despacito.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=kJQP7kiw5Fk"]
+    "comentarios": []
   },
   {
     "titulo": "Kloufrens",
@@ -356,8 +491,7 @@
     "genero": "Trap",
     "fecha": "2025-01-05",
     "imagen": "http://localhost:8080/Imagenes/Kloufrens.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=1PiJpDPZISg"]
+    "comentarios": []
   },
   {
     "titulo": "Turista",
@@ -365,8 +499,7 @@
     "genero": "Trap",
     "fecha": "2025-01-05",
     "imagen": "http://localhost:8080/Imagenes/Turista.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=EDb_6-1KZow"]
+    "comentarios": []
   },
   {
     "titulo": "Sentado Aquí",
@@ -374,8 +507,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Sentado-Aqui.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=xaTgB5W0ofU"]
+    "comentarios": []
   },
   {
     "titulo": "Pensándote",
@@ -383,8 +515,7 @@
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Pensandote.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=bXCUFG4a5T4"]
+    "comentarios": []
   },
   {
     "titulo": "Un Verano Sin Ti",
@@ -392,8 +523,7 @@
     "genero": "Reggaetón",
     "fecha": "2022-05-06",
     "imagen": "http://localhost:8080/Imagenes/Un-Verano-Sin-Ti.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=wYiYvabfyaY"]
+    "comentarios": []
   },
   {
     "titulo": "Amaneció",
@@ -401,8 +531,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Amanecio.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=EcO2S8fOGeE"]
+    "comentarios": []
   },
   {
     "titulo": "Segundos Platos",
@@ -410,8 +539,7 @@
     "genero": "Pop Rock",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Segundos-Platos.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=RG7idQb7ElE"]
+    "comentarios": []
   },
   {
     "titulo": "Dime Cómo Tú Quieras",
@@ -419,8 +547,7 @@
     "genero": "Rock Alternativo",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Dime-Como-Tu-Quieras.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=E-G3HZdz3Hg"]
+    "comentarios": []
   },
   {
     "titulo": "Me Extrañas",
@@ -428,8 +555,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Me-Extrañas.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=kL2mErR8yOs"]
+    "comentarios": []
   },
   {
     "titulo": "Margaret",
@@ -437,8 +563,7 @@
     "genero": "Indie Pop",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Margaret.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=lzeBPgfbZOg"]
+    "comentarios": []
   },
   {
     "titulo": "Xq Eres Así",
@@ -446,34 +571,31 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Xq-Eres-Asi.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=avA7a7gNBw8"]
-  },{
-  "titulo": "Los Alpes",
-  "autor": "Nsqk",
-  "genero": "Pop alternativo",
-  "fecha": "2024-08-01",
-  "imagen": "http://localhost:8080/Imagenes/Los-Alpes.jpg",
-  "comentarios": [],
-  "links": []
-},
+    "comentarios": []
+  },
+  {
+    "titulo": "Los Alpes",
+    "autor": "Nsqk",
+    "genero": "Pop alternativo",
+    "fecha": "2024-08-01",
+    "imagen": "http://localhost:8080/Imagenes/Los-Alpes.jpg",
+    "comentarios": []
+  },
   {
     "titulo": "Cancioncitas de Amor",
     "autor": "Romeo Santos",
     "genero": "Bachata",
     "fecha": "2014-02-11",
     "imagen": "http://localhost:8080/Imagenes/Cancioncitas-de-Amor.jpg",
-    "comentarios": [],
-    "links": []
+    "comentarios": []
   },
   {
-    "titulo": "Desenfocao'",
+    "titulo": "Desenfocao\u0027",
     "autor": "Rauw Alejandro",
     "genero": "Synth-pop",
     "fecha": "2021-08-10",
     "imagen": "http://localhost:8080/Imagenes/Desenfocao.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=mxYhwBMCvkk"]
+    "comentarios": []
   },
   {
     "titulo": "Nea",
@@ -481,8 +603,7 @@
     "genero": "Reggaetón",
     "fecha": "2020-01-01",
     "imagen": "http://localhost:8080/Imagenes/Nea.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=KoOUHJ6AGJ4"]
+    "comentarios": []
   },
   {
     "titulo": "Miau",
@@ -490,8 +611,7 @@
     "genero": "Urbano",
     "fecha": "2024-06-13",
     "imagen": "http://localhost:8080/Imagenes/Miau.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=vwcuT3Gd0uA"]
+    "comentarios": []
   },
   {
     "titulo": "Cangrinaje",
@@ -499,17 +619,15 @@
     "genero": "Hip hop",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cangrinaje.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=waOUPmXiV5g"]
+    "comentarios": []
   },
   {
     "titulo": "Ateo",
-    "autor": "C. Tangana & Nathy Peluso",
+    "autor": "C. Tangana \u0026 Nathy Peluso",
     "genero": "Bachata",
     "fecha": "2021-10-08",
     "imagen": "http://localhost:8080/Imagenes/Ateo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=3gz0rOQnH9U"]
+    "comentarios": []
   },
   {
     "titulo": "Demasiadas Mujeres",
@@ -517,8 +635,7 @@
     "genero": "Rap",
     "fecha": "2020-10-08",
     "imagen": "http://localhost:8080/Imagenes/Demasiadas-Mujeres.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=0xXWc6GVB0Y"]
+    "comentarios": []
   },
   {
     "titulo": "Como un G",
@@ -526,8 +643,7 @@
     "genero": "Pop",
     "fecha": "2022-03-18",
     "imagen": "http://localhost:8080/Imagenes/Como-un-G.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=QwtjqyG3rwY"]
+    "comentarios": []
   },
   {
     "titulo": "Velocidad de Crucero",
@@ -535,17 +651,15 @@
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Velocidad-de-Crucero.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=W3zt5NeSZ8I"]
+    "comentarios": []
   },
   {
     "titulo": "Enemigos",
-    "autor": "Feid, Miky Woodz & Juhn",
+    "autor": "Feid, Miky Woodz \u0026 Juhn",
     "genero": "Reggaetón",
     "fecha": "2022-01-01",
     "imagen": "http://localhost:8080/Imagenes/Enemigos.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=XQZV_6bH1RQ"]
+    "comentarios": []
   },
   {
     "titulo": "La Incondicional",
@@ -553,8 +667,7 @@
     "genero": "Balada",
     "fecha": "1989-02-20",
     "imagen": "http://localhost:8080/Imagenes/La-Incondicional.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=2GxzGo5T6Ko"]
+    "comentarios": []
   },
   {
     "titulo": "Hasta que me olvides",
@@ -562,8 +675,7 @@
     "genero": "Balada",
     "fecha": "1993-08-09",
     "imagen": "http://localhost:8080/Imagenes/Hasta-que-me-olvides.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=JfAmLR4sAzg"]
+    "comentarios": []
   },
   {
     "titulo": "Gatúbela",
@@ -571,8 +683,7 @@
     "genero": "Reggaetón",
     "fecha": "2022-08-25",
     "imagen": "http://localhost:8080/Imagenes/Gatubela.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=xyIkRZPpDbo"]
+    "comentarios": []
   },
   {
     "titulo": "Cosmo",
@@ -580,8 +691,7 @@
     "genero": "Urbano",
     "fecha": "2024-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cosmo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=fci2E3G5XsM"]
+    "comentarios": []
   },
   {
     "titulo": "Sin Poderes",
@@ -589,8 +699,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "/Imagenes/Sin-Poderes.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=PAeTt-IdovM"]
+    "comentarios": []
   },
   {
     "titulo": "Bellaka",
@@ -598,8 +707,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "/Imagenes/Bellaka.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Qh9pQKUq1hk"]
+    "comentarios": []
   },
   {
     "titulo": "Problemon",
@@ -607,8 +715,7 @@
     "genero": "Reggaetón",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Problemon.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=RYZ7mu4lt60"]
+    "comentarios": []
   },
   {
     "titulo": "Noches de Más",
@@ -616,8 +723,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Noches-de-Mas.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=k4kP09sXIZo"]
+    "comentarios": []
   },
   {
     "titulo": "Ferrari",
@@ -625,8 +731,7 @@
     "genero": "Pop",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Ferrari.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=_4rNvXcDLdE"]
+    "comentarios": []
   },
   {
     "titulo": "Me Rehúso",
@@ -634,8 +739,7 @@
     "genero": "Pop",
     "fecha": "2016-09-16",
     "imagen": "http://localhost:8080/Imagenes/Me-Rehuso.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=kOkQ4T5WO9E"]
+    "comentarios": []
   },
   {
     "titulo": "Ley Universal",
@@ -643,8 +747,7 @@
     "genero": "Pop",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Ley-Universal.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=jAObAm-hvqA"]
+    "comentarios": []
   },
   {
     "titulo": "3 Caídas",
@@ -652,8 +755,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/3-Caidas.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=k5igRMw6GEs"]
+    "comentarios": []
   },
   {
     "titulo": "Diciembre",
@@ -661,8 +763,7 @@
     "genero": "Rock Alternativo",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Diciembre.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=yABr7VKbi6U"]
+    "comentarios": []
   },
   {
     "titulo": "Antología",
@@ -670,25 +771,23 @@
     "genero": "Pop",
     "fecha": "1995-10-17",
     "imagen": "http://localhost:8080/Imagenes/Antologia.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=YfpRm-p7qlY"]
-  },{
-  "titulo": "Frío",
-  "autor": "Omar Apollo",
-  "genero": "R&B alternativo",
-  "fecha": "2023-10-04",
-  "imagen": "http://localhost:8080/Imagenes/Frio.jpg",
-  "comentarios": [],
-  "links": ["https://www.youtube.com/watch?v=n0LMQO84FxU"]
-},
+    "comentarios": []
+  },
+  {
+    "titulo": "Frío",
+    "autor": "Omar Apollo",
+    "genero": "R\u0026B alternativo",
+    "fecha": "2023-10-04",
+    "imagen": "http://localhost:8080/Imagenes/Frio.jpg",
+    "comentarios": []
+  },
   {
     "titulo": "Qué Somos",
     "autor": "Lyanno",
     "genero": "Reggaetón",
     "fecha": "2022-08-04",
     "imagen": "http://localhost:8080/Imagenes/Que-Somos.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=wQgi3WLUhIM"]
+    "comentarios": []
   },
   {
     "titulo": "Gata",
@@ -696,8 +795,7 @@
     "genero": "Pop experimental",
     "fecha": "2023-09-14",
     "imagen": "http://localhost:8080/Imagenes/Gata",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=4cZdAkYvniQ"]
+    "comentarios": []
   },
   {
     "titulo": "Voy con Todo",
@@ -705,8 +803,7 @@
     "genero": "Pop alternativo",
     "fecha": "2023-09-14",
     "imagen": "http://localhost:8080/Imagenes/Voy-con-Todo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=mFZebHzdaFM"]
+    "comentarios": []
   },
   {
     "titulo": "Una Vez",
@@ -714,8 +811,7 @@
     "genero": "Reggaetón",
     "fecha": "2020-05-29",
     "imagen": "http://localhost:8080/Imagenes/Una-Vez.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=zy5rKwZ5-ug"]
+    "comentarios": []
   },
   {
     "titulo": "Cómo Estás",
@@ -723,8 +819,7 @@
     "genero": "Urbano",
     "fecha": "2023-06-01",
     "imagen": "http://localhost:8080/Imagenes/Como-Estas.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=eVPGoULUVTI"]
+    "comentarios": []
   },
   {
     "titulo": "Mala Mujer",
@@ -732,8 +827,7 @@
     "genero": "Trap",
     "fecha": "2017-06-02",
     "imagen": "http://localhost:8080/Imagenes/Mala-Mujer.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=6JCLY0Rlx6Q"]
+    "comentarios": []
   },
   {
     "titulo": "Igual que un Ángel",
@@ -741,8 +835,7 @@
     "genero": "Pop",
     "fecha": "2024-01-11",
     "imagen": "http://localhost:8080/Imagenes/Igual-que-un-Angel.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=pmtENuWtvLA"]
+    "comentarios": []
   },
   {
     "titulo": "Necio",
@@ -750,8 +843,7 @@
     "genero": "Bachata",
     "fecha": "2011-11-08",
     "imagen": "http://localhost:8080/Imagenes/Necio.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Zn_pKze6gHY"]
+    "comentarios": []
   },
   {
     "titulo": "El Paraíso",
@@ -759,8 +851,7 @@
     "genero": "Rock alternativo",
     "fecha": "2020-08-07",
     "imagen": "http://localhost:8080/Imagenes/El-Paraiso.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=AfUoAS6crXA"]
+    "comentarios": []
   },
   {
     "titulo": "Cosas Que No Te Dije",
@@ -768,8 +859,7 @@
     "genero": "Urbano",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Cosas-Que-No-Te-Dije.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=RrSLM1IQGvY"]
+    "comentarios": []
   },
   {
     "titulo": "Solo",
@@ -777,8 +867,7 @@
     "genero": "Rock alternativo",
     "fecha": "2020-08-07",
     "imagen": "http://localhost:8080/Imagenes/Solo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=UCGek4S6uZQ"]
+    "comentarios": []
   },
   {
     "titulo": "Si Preguntas por Mí",
@@ -786,8 +875,7 @@
     "genero": "Electropop",
     "fecha": "2022-10-28",
     "imagen": "http://localhost:8080/Imagenes/Si-Preguntas-por-Mi.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=53U_JnSryI4"]
+    "comentarios": []
   },
   {
     "titulo": "Mónaco",
@@ -795,8 +883,7 @@
     "genero": "Trap latino",
     "fecha": "2023-10-13",
     "imagen": "http://localhost:8080/Imagenes/Monaco.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=y6GwWLHgStk"]
+    "comentarios": []
   },
   {
     "titulo": "Mas Humano",
@@ -804,8 +891,7 @@
     "genero": "Pop alternativo",
     "fecha": "2023-01-01",
     "imagen": "http://localhost:8080/Imagenes/Mas-Humano.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=yoGO4aC9nF8"]
+    "comentarios": []
   },
   {
     "titulo": "Yoko",
@@ -813,8 +899,7 @@
     "genero": "Hip hop latino",
     "fecha": "2023-11-10",
     "imagen": "http://localhost:8080/Imagenes/Yoko.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=2mtaB-Vr6m8"]
+    "comentarios": []
   },
   {
     "titulo": "Columbia",
@@ -822,8 +907,7 @@
     "genero": "Trap",
     "fecha": "2023-07-07",
     "imagen": "http://localhost:8080/Imagenes/Columbia.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=bqok2Xyz3fU"]
+    "comentarios": []
   },
   {
     "titulo": "Es Verdad",
@@ -831,8 +915,7 @@
     "genero": "Bolero pop",
     "fecha": "2023-03-24",
     "imagen": "http://localhost:8080/Imagenes/Es-Verdad.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=c8lj4YwK4N4"]
+    "comentarios": []
   },
   {
     "titulo": "Nunca Estoy",
@@ -840,8 +923,7 @@
     "genero": "Pop",
     "fecha": "2020-04-23",
     "imagen": "http://localhost:8080/Imagenes/Nunca-Estoy.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=rGup1-cEKNs"]
+    "comentarios": []
   },
   {
     "titulo": "Primeras Veces",
@@ -849,8 +931,7 @@
     "genero": "Pop",
     "fecha": "2022-11-04",
     "imagen": "http://localhost:8080/Imagenes/Primeras-Veces.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=sx4zLznYY4g"]
+    "comentarios": []
   },
   {
     "titulo": "No Se Va",
@@ -858,8 +939,7 @@
     "genero": "Pop",
     "fecha": "2015-06-16",
     "imagen": "http://localhost:8080/Imagenes/No-Se-Va.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=07gkOrQKcRM"]
+    "comentarios": []
   },
   {
     "titulo": "Holanda",
@@ -867,8 +947,7 @@
     "genero": "Trap latino",
     "fecha": "2023-08-11",
     "imagen": "http://localhost:8080/Imagenes/Holanda.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=1zXK_aBOtmY"]
+    "comentarios": []
   },
   {
     "titulo": "Me Voy",
@@ -876,8 +955,7 @@
     "genero": "Pop rock",
     "fecha": "2006-03-14",
     "imagen": "http://localhost:8080/Imagenes/Me-Voy.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=-oqAU5VxFWs"]
+    "comentarios": []
   },
   {
     "titulo": "Quién lo Diría",
@@ -885,8 +963,7 @@
     "genero": "Pop",
     "fecha": "2022-03-24",
     "imagen": "http://localhost:8080/Imagenes/Quien-lo-Diria.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Oa1W91JLAn8"]
+    "comentarios": []
   },
   {
     "titulo": "Todavía",
@@ -894,25 +971,23 @@
     "genero": "Electrónica urbana",
     "fecha": "2023-06-29",
     "imagen": "http://localhost:8080/Imagenes/Todavia.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=_EbI_7oksh0"]
-  },{
-  "titulo": "Para Cenar",
-  "autor": "Anakena",
-  "genero": "Pop tropical",
-  "fecha": "2023-06-09",
-  "imagen": "http://localhost:8080/Imagenes/Para-Cenar.jpg",
-  "comentarios": [],
-  "links": ["https://www.youtube.com/watch?v=VfUvDjIr5YI"]
-},
+    "comentarios": []
+  },
+  {
+    "titulo": "Para Cenar",
+    "autor": "Anakena",
+    "genero": "Pop tropical",
+    "fecha": "2023-06-09",
+    "imagen": "http://localhost:8080/Imagenes/Para-Cenar.jpg",
+    "comentarios": []
+  },
   {
     "titulo": "Feriado",
     "autor": "Rawayana",
     "genero": "Alternativa",
     "fecha": "2021-07-23",
     "imagen": "http://localhost:8080/Imagenes/Feriado.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=NsBaJv7j5NY"]
+    "comentarios": []
   },
   {
     "titulo": "A Ningún Hombre",
@@ -920,8 +995,7 @@
     "genero": "Flamenco experimental",
     "fecha": "2018-11-02",
     "imagen": "http://localhost:8080/Imagenes/A-Ningun-Hombre.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=KYCTUEnB5yI"]
+    "comentarios": []
   },
   {
     "titulo": "De Tú a Tú",
@@ -929,8 +1003,7 @@
     "genero": "Pop latino",
     "fecha": "2022-03-03",
     "imagen": "http://localhost:8080/Imagenes/De-Tu-a-Tu.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=3DDaLZYvHFg"]
+    "comentarios": []
   },
   {
     "titulo": "Algodón",
@@ -938,8 +1011,7 @@
     "genero": "Pop",
     "fecha": "2023-08-18",
     "imagen": "http://localhost:8080/Imagenes/Algodon.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=HqcmjhGp1Jc"]
+    "comentarios": []
   },
   {
     "titulo": "Aquí Sigo",
@@ -947,8 +1019,7 @@
     "genero": "Indie pop",
     "fecha": "2021-10-15",
     "imagen": "http://localhost:8080/Imagenes/Aqui-Sigo.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=FL4gkL0zzCc"]
+    "comentarios": []
   },
   {
     "titulo": "5 Estrellas",
@@ -956,8 +1027,7 @@
     "genero": "Pop alternativo",
     "fecha": "2023-02-14",
     "imagen": "http://localhost:8080/Imagenes/5-Estrellas.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=UzXeiLPgDGo"]
+    "comentarios": []
   },
   {
     "titulo": "Se Fue la Luz",
@@ -965,8 +1035,7 @@
     "genero": "Pop alternativo",
     "fecha": "2023-05-26",
     "imagen": "http://localhost:8080/Imagenes/Se-Fue-la-Luz.jpg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=pa_sx7qNjU0"]
+    "comentarios": []
   },
   {
     "titulo": "El Padrino",
@@ -974,7 +1043,6 @@
     "genero": "Reggaetón",
     "fecha": "2024-04-04",
     "imagen": "http://localhost:8080/Imagenes/El-Padrino.jpeg",
-    "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=Z_2jq6kGe9s"]
+    "comentarios": []
   }
 ]

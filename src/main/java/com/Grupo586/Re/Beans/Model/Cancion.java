@@ -9,7 +9,7 @@ public class Cancion {
   String genero;
   String fecha;
   String imagen;
-  ArrayList<Comentario> Comentarios;
+  ArrayList<Comentario> comentarios;
   ArrayList<String> Links;
 
   public Cancion(ArrayList<Comentario> comentarios, String imagen, String fecha, String titulo, String autor, String genero, ArrayList<String> links) {
@@ -21,9 +21,9 @@ public class Cancion {
     this.Links = links;
 
     if (comentarios == null) {
-      this.Comentarios = new ArrayList<>();
+      this.comentarios = new ArrayList<Comentario>();
     } else {
-      this.Comentarios = comentarios;
+      this.comentarios = comentarios;
     }
   }
 
@@ -43,8 +43,8 @@ public class Cancion {
   public String getFecha() { return fecha; }
   public void setFecha(String fecha) { this.fecha = fecha; }
 
-  public ArrayList<Comentario> getComentarios() { return Comentarios; }
-  public void setComentarios(ArrayList<Comentario> comentarios) { this.Comentarios = comentarios; }
+  public ArrayList<Comentario> getComentarios() { return comentarios; }
+  public void setComentarios(ArrayList<Comentario> comentarios) { this.comentarios = comentarios; }
 
   public ArrayList<String> getLinks() { return Links; }
   public void setLinks(ArrayList<String> links) { this.Links = links; }

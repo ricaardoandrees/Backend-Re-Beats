@@ -216,7 +216,10 @@ public class UsuarioController {
 
 
             cancionEncontrada.getComentarios().add(nuevoComentario);
-
+            if (cancionEncontrada.getComentarios() == null) {
+                cancionEncontrada.setComentarios(new ArrayList<>());
+            }
+            cancionEncontrada.getComentarios().add(nuevoComentario);
 
             Files.write(Paths.get("src/main/resources/canciones.json"), gson.toJson(canciones).getBytes());
 

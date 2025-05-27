@@ -6,7 +6,7 @@
     "fecha": "2025-05-22",
     "imagen": "http://localhost:8080/Imagenes/Bandida.png",
     "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=QbeH0UxTutQ&utm_source=chatgpt.com"]
+    "links": ["https://www.youtube.com/watch?v=ZLoTa_-YBzc"]
   },
   {
     "titulo": "Aurora",
@@ -15,7 +15,7 @@
     "fecha": "2025-05-16",
     "imagen": "http://localhost:8080/Imagenes/Aurora.png",
     "comentarios": [],
-    "links": ["https://www.youtube.com/watch?v=2AHTcTLzcZE&utm_source=chatgpt.com"]
+    "links": ["https://www.youtube.com/watch?v=sJUkVaqVzYk"]
   },
   {
     "titulo": "Rapido",
