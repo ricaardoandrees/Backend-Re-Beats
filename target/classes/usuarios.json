@@ -1,5 +1,12 @@
 [
     {
+        "ID": 0,
+        "Amigos": [],
+        "Playlists": [],
+        "nombre": "admin",
+        "clave": "admin1234"
+    },
+    {
         "ID": 1,
         "Amigos": [],
         "Playlists": [],
@@ -37,17 +44,17 @@
                     {
                         "titulo": "Neo Romeo",
                         "autor": "Latin Mafia,rusowsky",
-                        "genero": "R\u0026B",
+                        "genero": "R&B",
                         "fecha": "2024-07-23",
-                        "imagen": "https://www.google.com/url?sa\u003di\u0026url\u003dhttps%3A%2F%2Fwww.deezer.com%2Fmx%2Falbum%2F626789131\u0026psig\u003dAOvVaw3l7RlYEecIhRnDqs4-P8d8\u0026ust\u003d1748049791895000\u0026source\u003dimages\u0026cd\u003dvfe\u0026opi\u003d89978449\u0026ved\u003d0CBQQjRxqFwoTCOj1w4i3uI0DFQAAAAAdAAAAABAE",
+                        "imagen": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deezer.com%2Fmx%2Falbum%2F626789131&psig=AOvVaw3l7RlYEecIhRnDqs4-P8d8&ust=1748049791895000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj1w4i3uI0DFQAAAAAdAAAAABAE",
                         "Comentarios": []
                     },
                     {
-                        "titulo": "Babysita \u003c/3",
+                        "titulo": "Babysita </3",
                         "autor": "Alvaro Diaz",
-                        "genero": "pOP",
+                        "genero": "Pop",
                         "fecha": "2021-10-29",
-                        "imagen": "https://www.google.com/url?sa\u003di\u0026url\u003dhttps%3A%2F%2Fopen.spotify.com%2Fintl-es%2Ftrack%2F0TzPApPjiPWXv98qSCrgbp\u0026psig\u003dAOvVaw0DYhpfJ27UfeS1vEkAUfqE\u0026ust\u003d1748049911366000\u0026source\u003dimages\u0026cd\u003dvfe\u0026opi\u003d89978449\u0026ved\u003d0CBQQjRxqFwoTCPjK58G3uI0DFQAAAAAdAAAAABAE",
+                        "imagen": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fopen.spotify.com%2Fintl-es%2Ftrack%2F0TzPApPjiPWXv98qSCrgbp&psig=AOvVaw0DYhpfJ27UfeS1vEkAUfqE&ust=1748049911366000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjK58G3uI0DFQAAAAAdAAAAABAE",
                         "Comentarios": []
                     }
                 ]
