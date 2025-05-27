@@ -22,6 +22,7 @@ public class AdminController {
     public AdminController() {}
 
     private final Gson gson = new Gson();
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/CrearCancion")
     public ResponseEntity<String> crearCancion(@RequestParam("titulo") String titulo, @RequestParam("autor") String autor, @RequestParam("genero") String genero,
                                                @RequestParam("fecha") String fecha,

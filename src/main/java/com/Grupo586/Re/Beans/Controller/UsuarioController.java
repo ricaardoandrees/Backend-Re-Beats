@@ -295,10 +295,10 @@ public class UsuarioController {
 
 
             if ("admin".equalsIgnoreCase(usuarioEncontrado.getNombre())) {
-                return ResponseEntity.ok("{\"mensaje\":\"Login exitoso\", \"perfil\":\"admin\"}");
+                return ResponseEntity.ok(gson.toJson(usuarioEncontrado));
             }
 
-
+            System.out.print(usuarioEncontrado);
             return ResponseEntity.ok(gson.toJson(usuarioEncontrado));
 
         } catch (IOException e) {

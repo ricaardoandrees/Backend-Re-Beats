@@ -10,6 +10,15 @@ public class Playlist  {
   String Propietario;
   ArrayList<Cancion> Canciones;
 
+  @Override
+  public String toString() {
+    return "Playlist{" +
+            "Descripcion='" + Descripcion + '\'' +
+            ", Propietario='" + Propietario + '\'' +
+            ", Canciones=" + Canciones +
+            '}';
+  }
+
   public Playlist(String descripcion, String propietario, ArrayList<Cancion> canciones) {
     this.Descripcion = descripcion;
     this.Propietario = propietario;

@@ -12,6 +12,15 @@ public class Usuario extends Persona{
     super(null, null);
   }
 
+  @Override
+  public String toString() {
+    return "Usuario{" +
+            "ID=" + ID +
+            ", Amigos=" + Amigos +
+            ", Playlists=" + Playlists +
+            '}';
+  }
+
   public Usuario(String nombre, String clave, ArrayList<String> amigos, ArrayList<Playlist> playlists, Integer ID) {
     super( nombre, clave);
 

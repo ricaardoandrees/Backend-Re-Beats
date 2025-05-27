@@ -1,0 +1,10 @@
+POST http://localhost:8080/admin/CrearCancion?titulo=8HUtuo2T&autor=9C0DIK8c&genero=35XIL146&fecha=fcwgNi8W&imagen=cfLIKPzj
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-05-27T005047.200.txt
+
+###
+

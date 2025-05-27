@@ -12,6 +12,19 @@ public class Cancion {
   ArrayList<Comentario> comentarios;
   ArrayList<String> Links;
 
+  @Override
+  public String toString() {
+    return "Cancion{" +
+            "titulo='" + titulo + '\'' +
+            ", autor='" + autor + '\'' +
+            ", genero='" + genero + '\'' +
+            ", fecha='" + fecha + '\'' +
+            ", imagen='" + imagen + '\'' +
+            ", Comentarios=" + comentarios +
+            ", Links=" + Links +
+            '}';
+  }
+
   public Cancion(ArrayList<Comentario> comentarios, String imagen, String fecha, String titulo, String autor, String genero, ArrayList<String> links) {
     this.imagen = imagen;
     this.fecha = fecha;

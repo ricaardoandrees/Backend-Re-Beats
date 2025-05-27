@@ -28,7 +28,7 @@
                         "fecha": "2024-06-13",
                         "imagen": "http://localhost:8080/Imagenes/Miau.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=vwcuT3Gd0uA"]
+                        "Links": ["https://www.youtube.com/watch?v=vwcuT3Gd0uA"]
                     },
                     {
                         "titulo": "Cangrinaje",
@@ -37,7 +37,7 @@
                         "fecha": "2023-01-01",
                         "imagen": "http://localhost:8080/Imagenes/Cangrinaje.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=waOUPmXiV5g"]
+                        "Links": ["https://www.youtube.com/watch?v=waOUPmXiV5g"]
                     },
                     {
                         "titulo": "Ateo",
@@ -46,7 +46,7 @@
                         "fecha": "2021-10-08",
                         "imagen": "http://localhost:8080/Imagenes/Ateo.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=3gz0rOQnH9U"]
+                        "Links": ["https://www.youtube.com/watch?v=3gz0rOQnH9U"]
                     },
                     {
                         "titulo": "Demasiadas Mujeres",
@@ -55,7 +55,7 @@
                         "fecha": "2020-10-08",
                         "imagen": "http://localhost:8080/Imagenes/Demasiadas-Mujeres.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=0xXWc6GVB0Y"]
+                        "Links": ["https://www.youtube.com/watch?v=0xXWc6GVB0Y"]
                     },
                     {
                         "titulo": "Como un G",
@@ -64,7 +64,7 @@
                         "fecha": "2022-03-18",
                         "imagen": "http://localhost:8080/Imagenes/Como-un-G.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=QwtjqyG3rwY"]
+                        "Links": ["https://www.youtube.com/watch?v=QwtjqyG3rwY"]
                     },
                     {
                         "titulo": "Velocidad de Crucero",
@@ -73,7 +73,7 @@
                         "fecha": "2023-01-01",
                         "imagen": "http://localhost:8080/Imagenes/Velocidad-de-Crucero.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=W3zt5NeSZ8I"]
+                        "Links": ["https://www.youtube.com/watch?v=W3zt5NeSZ8I"]
                     },
                     {
                         "titulo": "Enemigos",
@@ -82,7 +82,7 @@
                         "fecha": "2022-01-01",
                         "imagen": "http://localhost:8080/Imagenes/Enemigos.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=XQZV_6bH1RQ"]
+                        "Links": ["https://www.youtube.com/watch?v=XQZV_6bH1RQ"]
                     },
                     {
                         "titulo": "La Incondicional",
@@ -91,7 +91,7 @@
                         "fecha": "1989-02-20",
                         "imagen": "http://localhost:8080/Imagenes/La-Incondicional.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=2GxzGo5T6Ko"]
+                        "Links": ["https://www.youtube.com/watch?v=2GxzGo5T6Ko"]
                     },
                     {
                         "titulo": "Hasta que me olvides",
@@ -100,7 +100,7 @@
                         "fecha": "1993-08-09",
                         "imagen": "http://localhost:8080/Imagenes/Hasta-que-me-olvides.jpg",
                         "comentarios": [],
-                        "links": ["https://www.youtube.com/watch?v=JfAmLR4sAzg"]
+                        "Links": ["https://www.youtube.com/watch?v=JfAmLR4sAzg"]
                     }
                 ]
             }
