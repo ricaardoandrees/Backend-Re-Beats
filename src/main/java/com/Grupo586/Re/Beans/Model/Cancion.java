@@ -1,40 +1,42 @@
 package com.Grupo586.Re.Beans.Model;
 
 import java.util.ArrayList;
-import com.Grupo586.Re.Beans.Model.Comentario;
 
 public class Cancion {
-  String titulo;
-  String autor;
-  String genero;
-  String fecha;
-  String imagen;
-  ArrayList<Comentario> comentarios;
-  ArrayList<String> Links;
+  private String titulo;
+  private Integer id;
+  private String autor;
+  private String fecha;
+  private String imagen;
+  private ArrayList<String> links;
+  private ArrayList<Integer> comentarios;
 
   @Override
   public String toString() {
     return "Cancion{" +
             "titulo='" + titulo + '\'' +
+            ", id=" + id +
             ", autor='" + autor + '\'' +
-            ", genero='" + genero + '\'' +
             ", fecha='" + fecha + '\'' +
             ", imagen='" + imagen + '\'' +
-            ", Comentarios=" + comentarios +
-            ", Links=" + Links +
+            ", links=" + links +
+            ", comentarios=" + comentarios +
             '}';
   }
 
-  public Cancion(ArrayList<Comentario> comentarios, String imagen, String fecha, String titulo, String autor, String genero, ArrayList<String> links) {
-    this.imagen = imagen;
-    this.fecha = fecha;
+  public Cancion(String titulo, Integer id, String autor, String fecha, String imagen, ArrayList<String> links, ArrayList<Integer> comentarios) {
     this.titulo = titulo;
+    this.id = id;
     this.autor = autor;
-    this.genero = genero;
-    this.Links = links;
-
+    this.fecha = fecha;
+    this.imagen = imagen;
+    if (links == null) {
+      this.links = new ArrayList<String>();
+    } else {
+      this.links = links;
+    }
     if (comentarios == null) {
-      this.comentarios = new ArrayList<Comentario>();
+      this.comentarios = new ArrayList<Integer>();
     } else {
       this.comentarios = comentarios;
     }
@@ -50,15 +52,12 @@ public class Cancion {
   public String getAutor() { return autor; }
   public void setAutor(String autor) { this.autor = autor; }
 
-  public String getGenero() { return genero; }
-  public void setGenero(String genero) { this.genero = genero; }
-
   public String getFecha() { return fecha; }
   public void setFecha(String fecha) { this.fecha = fecha; }
 
-  public ArrayList<Comentario> getComentarios() { return comentarios; }
-  public void setComentarios(ArrayList<Comentario> comentarios) { this.comentarios = comentarios; }
+  public ArrayList<String> getLinks() { return links; }
+  public void setLinks(ArrayList<String> links) { this.links = links; }
 
-  public ArrayList<String> getLinks() { return Links; }
-  public void setLinks(ArrayList<String> links) { this.Links = links; }
+  public ArrayList<Integer> getComentarios() { return comentarios; }
+  public void setComentarios(ArrayList<Integer> comentarios) { this.comentarios = comentarios; }
 }

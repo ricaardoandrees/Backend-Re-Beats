@@ -2,64 +2,97 @@ package com.Grupo586.Re.Beans.Model;
 
 import java.util.ArrayList;
 
-public class Usuario extends Persona{
+public class Usuario {
+  private String nombre;
+  private String clave;
+  private Integer id;
+  private RolUsuario rol;
+  private ArrayList<Integer> amigos;
+  private ArrayList<Integer> playlists;
 
-  Integer ID;
-  ArrayList<String> Amigos;
-  ArrayList<Playlist> Playlists;
-  
-  public Usuario() {
-    super(null, null);
+  public enum RolUsuario {
+    Admin,
+    Usuario
   }
 
   @Override
   public String toString() {
     return "Usuario{" +
-            "ID=" + ID +
-            ", Amigos=" + Amigos +
-            ", Playlists=" + Playlists +
+            "nombre='" + nombre + '\'' +
+            ", clave='" + clave + '\'' +
+            ", id=" + id +
+            ", rol=" + rol +
+            ", amigos=" + amigos +
+            ", playlists=" + playlists +
             '}';
   }
 
-  public Usuario(String nombre, String clave, ArrayList<String> amigos, ArrayList<Playlist> playlists, Integer ID) {
-    super( nombre, clave);
+  public Usuario(String nombre, String clave, Integer id, RolUsuario rol, ArrayList<Integer> amigos, ArrayList<Integer> playlists) {
+    this.nombre = nombre;
+    this.clave = clave;
+    this.id = id;
+    this.rol = rol;
 
     if (amigos == null) {
-      this.Amigos = new ArrayList<String>();
+      this.amigos = new ArrayList<Integer>();
     } else {
-      this.Amigos = amigos;
+      this.amigos = amigos;
     }
 
     if (playlists == null) {
-      this.Playlists = new ArrayList<Playlist>();
+      this.playlists = new ArrayList<Integer>();
     } else {
-      this.Playlists = playlists;
+      this.playlists = playlists;
     }
-
-    this.ID = ID;
   }
 
-  public Integer getID() {
-    return ID;
+  public String getNombre() {
+    return nombre;
   }
 
-  public void setID(Integer ID) {
-    this.ID = ID;
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
 
-  public ArrayList<String> getAmigos() {
-    return Amigos;
+  public String getClave() {
+    return clave;
   }
 
-  public void setAmigos(ArrayList<String> amigos) {
-    Amigos = amigos;
+  public void setClave(String clave) {
+    this.clave = clave;
   }
 
-  public ArrayList<Playlist> getPlaylists() {
-    return Playlists;
+  public Integer getId() {
+    return id;
   }
 
-  public void setPlaylists(ArrayList<Playlist> playlists) {
-    Playlists = playlists;
+  public void setId(Integer id) {
+    this.id = id;
   }
+
+  public RolUsuario getRol() {
+    return rol;
+  }
+
+  public void setRol(RolUsuario rol) {
+    this.rol = rol;
+  }
+
+  public ArrayList<Integer> getAmigos() {
+    return amigos;
+  }
+
+  public void setAmigos(ArrayList<Integer> amigos) {
+    this.amigos = amigos;
+  }
+
+  public ArrayList<Integer> getPlaylists() {
+    return playlists;
+  }
+
+  public void setPlaylists(ArrayList<Integer> playlists) {
+    this.playlists = playlists;
+  }
+
+
 }

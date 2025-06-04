@@ -1,51 +1,74 @@
 package com.Grupo586.Re.Beans.Model;
 
 import java.util.ArrayList;
-import com.Grupo586.Re.Beans.Model.Cancion;
-import com.Grupo586.Re.Beans.Model.Usuario;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Playlist  {
-  String Descripcion;
-  String Propietario;
-  ArrayList<Cancion> Canciones;
+  private String titulo;
+  private Integer id;
+  private ArrayList<Integer> canciones;
+  private Integer idPropietario;
+  private String propietario;
 
   @Override
   public String toString() {
     return "Playlist{" +
-            "Descripcion='" + Descripcion + '\'' +
-            ", Propietario='" + Propietario + '\'' +
-            ", Canciones=" + Canciones +
+            "titulo='" + titulo + '\'' +
+            ", id=" + id +
+            ", canciones=" + canciones +
+            ", idPropietario=" + idPropietario +
+            ", propietario='" + propietario + '\'' +
             '}';
   }
 
-  public Playlist(String descripcion, String propietario, ArrayList<Cancion> canciones) {
-    this.Descripcion = descripcion;
-    this.Propietario = propietario;
-    this.Canciones = canciones;
+  public Playlist(String titulo, Integer id, ArrayList<Integer> canciones, Integer idPropietario, String propietario) {
+    this.titulo = titulo;
+    this.id = id;
+    if (canciones == null) {
+      this.canciones = new ArrayList<Integer>();
+    } else {
+      this.canciones = canciones;
+    }
+    this.idPropietario = idPropietario;
+    this.propietario = propietario;
   }
 
-  public String getDescripcion() {
-    return Descripcion;
+  public String getTitulo() {
+    return titulo;
   }
 
-  public void setDescripcion(String descripcion) {
-    this.Descripcion = descripcion;
+  public void setTitulo(String titulo) {
+    this.titulo = titulo;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public ArrayList<Integer> getCanciones() {
+    return canciones;
+  }
+
+  public void setCanciones(ArrayList<Integer> canciones) {
+    this.canciones = canciones;
+  }
+
+  public Integer getIdPropietario() {
+    return idPropietario;
+  }
+
+  public void setIdPropietario(Integer idPropietario) {
+    this.idPropietario = idPropietario;
   }
 
   public String getPropietario() {
-    return Propietario;
+    return propietario;
   }
 
   public void setPropietario(String propietario) {
-    this.Propietario = propietario;
-  }
-
-  public ArrayList<Cancion> getCanciones() {
-    return Canciones;
-  }
-
-  public void setCanciones(ArrayList<Cancion> canciones) {
-    this.Canciones = canciones;
+    this.propietario = propietario;
   }
 }

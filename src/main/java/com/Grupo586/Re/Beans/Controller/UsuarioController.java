@@ -77,8 +77,8 @@ public class UsuarioController {
 
             int maxId = 0;
             for (Usuario usuario : usuarios) {
-                if (usuario.getID() > maxId) {
-                    maxId = usuario.getID();
+                if (usuario.getId() > maxId) {
+                    maxId = usuario.getId();
                 }
             }
 
