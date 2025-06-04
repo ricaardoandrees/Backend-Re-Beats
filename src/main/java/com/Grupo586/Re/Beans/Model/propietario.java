@@ -2,7 +2,7 @@ package com.Grupo586.Re.Beans.Model;
 
 import java.util.ArrayList;
 
-public class Usuario {
+public class propietario {
   private String nombre;
   private String clave;
   private Integer id;
@@ -27,7 +27,7 @@ public class Usuario {
             '}';
   }
 
-  public Usuario(String nombre, String clave, Integer id, RolUsuario rol, ArrayList<Integer> amigos, ArrayList<Integer> playlists) {
+  public propietario(String nombre, String clave, Integer id, RolUsuario rol, ArrayList<Integer> amigos, ArrayList<Integer> playlists) {
     this.nombre = nombre;
     this.clave = clave;
     this.id = id;

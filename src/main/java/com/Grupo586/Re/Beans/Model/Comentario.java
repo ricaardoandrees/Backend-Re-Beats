@@ -1,17 +1,34 @@
 package com.Grupo586.Re.Beans.Model;
 
-import java.time.LocalDateTime;
-import com.Grupo586.Re.Beans.Model.Usuario;
-
 public class Comentario {
-  String comentario;
-  Usuario usuario;
-  String fecha;
+  private Integer id;
+  private String comentario;
+  private Integer idPropietario;
+  private String propietario;
 
-  public Comentario(String comentario, Usuario usuario, String fecha) {
+  @Override
+  public String toString() {
+    return "Comentario{" +
+            "id=" + id +
+            ", comentario='" + comentario + '\'' +
+            ", idPropietario=" + idPropietario +
+            ", propietario='" + propietario + '\'' +
+            '}';
+  }
+
+  public Comentario(Integer id, String comentario, Integer idPropietario, String propietario) {
+    this.id = id;
     this.comentario = comentario;
-    this.usuario = usuario;
-    this.fecha = fecha;
+    this.idPropietario = idPropietario;
+    this.propietario = propietario;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   public String getComentario() {
@@ -22,19 +39,19 @@ public class Comentario {
     this.comentario = comentario;
   }
 
-  public Usuario getUsuario() {
-    return usuario;
+  public Integer getIdPropietario() {
+    return idPropietario;
   }
 
-  public void setUsuario(Usuario usuario) {
-    this.usuario = usuario;
+  public void setIdPropietario(Integer idPropietario) {
+    this.idPropietario = idPropietario;
   }
 
-  public String getFecha() {
-    return fecha;
+  public String getPropietario() {
+    return propietario;
   }
 
-  public void setFecha(String fecha) {
-    this.fecha = fecha;
+  public void setPropietario(String propietario) {
+    this.propietario = propietario;
   }
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import com.Grupo586.Re.Beans.Model.Usuario;
+import com.Grupo586.Re.Beans.Model.propietario;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,12 +37,12 @@ public class UsuarioController {
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
 
 
-            Type listType = new TypeToken<List<Usuario>>() {
+            Type listType = new TypeToken<List<propietario>>() {
             }.getType();
-            List<Usuario> perfiles = gson.fromJson(jsonData, listType);
+            List<propietario> perfiles = gson.fromJson(jsonData, listType);
 
             // Filtrar los perfiles según el nombre
-            List<Usuario> filtrados = perfiles.stream()
+            List<propietario> filtrados = perfiles.stream()
                     .filter(perfil -> perfil.getNombre().equalsIgnoreCase(nombre))
                     .collect(Collectors.toList());
 
@@ -71,12 +71,12 @@ public class UsuarioController {
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
 
 
-            Type listType = new TypeToken<List<Usuario>>() {}.getType();
-            List<Usuario> usuarios = gson.fromJson(jsonData, listType);
+            Type listType = new TypeToken<List<propietario>>() {}.getType();
+            List<propietario> usuarios = gson.fromJson(jsonData, listType);
 
 
             int maxId = 0;
-            for (Usuario usuario : usuarios) {
+            for (propietario usuario : usuarios) {
                 if (usuario.getId() > maxId) {
                     maxId = usuario.getId();
                 }
@@ -85,7 +85,7 @@ public class UsuarioController {
             int nuevoId = maxId + 1;
 
 
-            Usuario nuevoUsuario = new Usuario( nombre, clave, new ArrayList<>(), new ArrayList<>(),nuevoId);
+            propietario nuevoUsuario = new propietario( nombre, clave, new ArrayList<>(), new ArrayList<>(),nuevoId);
             usuarios.add(nuevoUsuario);
 
 
@@ -173,13 +173,13 @@ public class UsuarioController {
         try {
             //leo usuarios
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
-            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+            Type userListType = new TypeToken<List<propietario>>() {}.getType();
+            List<propietario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Usuario usuarioEncontrado = null;
+            propietario usuarioEncontrado = null;
 
-            for (Usuario u : usuarios) {
+            for (propietario u : usuarios) {
                 if (u.getNombre().equalsIgnoreCase(usuarioNombre)) {
                     usuarioEncontrado = u;
                     break;
@@ -237,11 +237,11 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
-            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+            Type userListType = new TypeToken<List<propietario>>() {}.getType();
+            List<propietario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Usuario usuarioEncontrado = usuarios.stream()
+            propietario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getNombre().equalsIgnoreCase(usuarioNombre))
                     .findFirst()
                     .orElse(null);
@@ -275,12 +275,12 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
-            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
+            Type userListType = new TypeToken<List<propietario>>() {}.getType();
+            List<propietario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Usuario usuarioEncontrado = null;
-            for (Usuario u : usuarios) {
+            propietario usuarioEncontrado = null;
+            for (propietario u : usuarios) {
                 if (u.getNombre().equalsIgnoreCase(nombre) && u.getClave().equals(clave)) {
                     usuarioEncontrado = u;
                     break;
@@ -312,12 +312,12 @@ public class UsuarioController {
         try {
 
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type listType = new TypeToken<List<Usuario>>() {}.getType();
-            List<Usuario> usuarios = gson.fromJson(jsonData, listType);
+            Type listType = new TypeToken<List<propietario>>() {}.getType();
+            List<propietario> usuarios = gson.fromJson(jsonData, listType);
 
 
-            Usuario usuarioEncontrado = null;
-            for (Usuario usuario : usuarios) {
+            propietario usuarioEncontrado = null;
+            for (propietario usuario : usuarios) {
                 if (usuario.getNombre().equalsIgnoreCase(nombre)) {
                     usuarioEncontrado = usuario;
                     break;
