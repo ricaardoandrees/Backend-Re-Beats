@@ -330,13 +330,13 @@ public class UsuarioController {
     @GetMapping("/MostrarPlaylists")
     public ResponseEntity<String> MostrarPlaylists(@RequestParam("idUsuario") Integer idUsuario) {
         try {
-            // Leer el JSON de usuarios
+
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
             Type usuariosListType = new TypeToken<List<Propietario>>() {
             }.getType();
             List<Propietario> usuarios = gson.fromJson(usuariosData, usuariosListType);
 
-            // Buscar el usuario por ID
+
             Propietario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
@@ -351,13 +351,13 @@ public class UsuarioController {
                 return ResponseEntity.ok("{\"mensaje\":\"El usuario no tiene playlists\"}");
             }
 
-            // Leer el JSON de playlists
+
             String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
             Type playlistsListType = new TypeToken<List<Playlist>>() {
             }.getType();
             List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
 
-            // Filtrar las playlists según los IDs guardados en usuarios.json
+
             List<Playlist> playlistsUsuario = todasLasPlaylists.stream()
                     .filter(pl -> usuarioEncontrado.getPlaylists().contains(pl.getId()))
                     .collect(Collectors.toList());
@@ -372,7 +372,7 @@ public class UsuarioController {
     @GetMapping("/ConsultarComentarios")
     public ResponseEntity<String> ConsultarComentarios(@RequestParam("idCancion") Integer idCancion) {
         try {
-            // Leer el JSON de canciones
+
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
             Type cancionesListType = new TypeToken<List<Cancion>>() {}.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
@@ -388,7 +388,7 @@ public class UsuarioController {
                         .body("{\"mensaje\":\"No hay comentarios para esta canción\"}");
             }
 
-            // Leer el JSON de comentarios
+
             String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/comentarios.json")));
             Type comentariosListType = new TypeToken<List<Comentario>>() {}.getType();
             List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosListType);
