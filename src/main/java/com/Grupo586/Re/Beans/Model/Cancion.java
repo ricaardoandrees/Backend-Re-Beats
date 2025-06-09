@@ -60,4 +60,12 @@ public class Cancion {
 
   public ArrayList<Integer> getComentarios() { return comentarios; }
   public void setComentarios(ArrayList<Integer> comentarios) { this.comentarios = comentarios; }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
 }
