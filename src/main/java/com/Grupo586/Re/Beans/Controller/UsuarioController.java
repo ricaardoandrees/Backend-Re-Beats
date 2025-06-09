@@ -112,6 +112,62 @@ public class UsuarioController {
 
 
     //UH de Cancion
+    @PostMapping("/CrearCancion")
+    public ResponseEntity<String> crearCancion(@RequestParam("idUsuario") Integer idUsuario,
+                                               @RequestParam("titulo") String titulo,
+                                               @RequestParam("autor") String autor,
+                                               @RequestParam("genero") String genero,
+                                               @RequestParam("fecha") String fecha,
+                                               @RequestParam("imagen") String imagen) {
+        try {
+
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type userListType = new TypeToken<List<Propietario>>() {
+            }.getType();
+            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+
+            Propietario usuarioEncontrado = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"error\":\"Usuario no registrado\"}");
+            }
+            if (usuarioEncontrado.getRol() != Propietario.RolUsuario.Admin) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("{\"error\":\"Permiso denegado: Solo los administradores pueden crear canciones\"}");
+            }
+
+
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+            Type listType = new TypeToken<List<Cancion>>() {
+            }.getType();
+            List<Cancion> canciones = gson.fromJson(jsonData, listType);
+
+
+            int nuevoIdCancion = canciones.stream()
+                    .mapToInt(Cancion::getId)
+                    .max()
+                    .orElse(0) + 1;
+
+            // Crear y guardar la nueva canción
+            Cancion nuevaCancion = new Cancion(titulo, nuevoIdCancion, autor, fecha, imagen, new ArrayList<>(), new ArrayList<>());
+            nuevaCancion.setId(nuevoIdCancion);
+
+            canciones.add(nuevaCancion);
+            Files.write(Paths.get("src/main/resources/canciones.json"), gson.toJson(canciones).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Canción creada correctamente\"}");
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
+        }
+    }
+
     @GetMapping("/CatalogoCanciones")
     public ResponseEntity<String> CatalogoCanciones() {
         try {
@@ -145,7 +201,8 @@ public class UsuarioController {
         try {
 
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
-            Type cancionesListType = new TypeToken<List<Cancion>>() {}.getType();
+            Type cancionesListType = new TypeToken<List<Cancion>>() {
+            }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
 
 
@@ -177,7 +234,8 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {}.getType();
+            Type userListType = new TypeToken<List<Propietario>>() {
+            }.getType();
             List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
@@ -193,7 +251,8 @@ public class UsuarioController {
 
 
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
-            Type cancionesListType = new TypeToken<List<Cancion>>() {}.getType();
+            Type cancionesListType = new TypeToken<List<Cancion>>() {
+            }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
 
 
@@ -209,7 +268,8 @@ public class UsuarioController {
 
 
             String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/comentarios.json")));
-            Type comentariosListType = new TypeToken<List<Comentario>>() {}.getType();
+            Type comentariosListType = new TypeToken<List<Comentario>>() {
+            }.getType();
             List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosListType);
 
 
@@ -259,22 +319,22 @@ public class UsuarioController {
             }
 
 
-            int nuevoIdPlaylist = usuarios.stream()
-                    .flatMap(u -> u.getPlaylists().stream())
-                    .max(Integer::compare)
+            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
+            Type playlistListType = new TypeToken<List<Playlist>>() {
+            }.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
+
+
+            int nuevoIdPlaylist = playlists.stream()
+                    .mapToInt(Playlist::getId)
+                    .max()
                     .orElse(0) + 1;
 
 
             Playlist nuevaPlaylist = new Playlist(descripcionPlaylist, nuevoIdPlaylist, new ArrayList<>(), idUsuario, usuarioEncontrado.getNombre());
 
 
-            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
-            Type playlistListType = new TypeToken<List<Playlist>>() {
-            }.getType();
-            List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
             playlists.add(nuevaPlaylist);
-
-
             Files.write(Paths.get("src/main/resources/playlist.json"), gson.toJson(playlists).getBytes());
 
 
@@ -282,6 +342,84 @@ public class UsuarioController {
             Files.write(Paths.get("src/main/resources/usuarios.json"), gson.toJson(usuarios).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Playlist creada correctamente\"}");
+
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
+        }
+    }
+
+    @PostMapping("/AgregarCancionAPlaylist")
+    public ResponseEntity<String> AgregarCancionAPlaylist(@RequestParam("idUsuario") Integer idUsuario,
+                                                          @RequestParam("idPlaylist") Integer idPlaylist,
+                                                          @RequestParam("idCancion") Integer idCancion) {
+        try {
+
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
+            Type userListType = new TypeToken<List<Propietario>>() {
+            }.getType();
+            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+
+
+            Propietario usuarioEncontrado = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"error\":\"Usuario no registrado\"}");
+            }
+
+
+            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
+            Type playlistListType = new TypeToken<List<Playlist>>() {
+            }.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
+
+
+            Playlist playlistEncontrada = playlists.stream()
+                    .filter(p -> p.getId().equals(idPlaylist))
+                    .findFirst()
+                    .orElse(null);
+
+            if (playlistEncontrada == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Playlist no encontrada\"}");
+            }
+
+
+            if (!playlistEncontrada.getIdPropietario().equals(idUsuario)) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("{\"error\":\"No tienes permiso para modificar esta playlist\"}");
+            }
+
+
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
+            Type cancionesListType = new TypeToken<List<Cancion>>() {
+            }.getType();
+            List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
+
+
+            Cancion cancionEncontrada = canciones.stream()
+                    .filter(c -> c.getId().equals(idCancion))
+                    .findFirst()
+                    .orElse(null);
+
+            if (cancionEncontrada == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Canción no encontrada\"}");
+            }
+
+
+            if (!playlistEncontrada.getCanciones().contains(idCancion)) {
+                playlistEncontrada.getCanciones().add(idCancion);
+            }
+
+
+            Files.write(Paths.get("src/main/resources/playlist.json"), gson.toJson(playlists).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Canción agregada correctamente a la playlist\"}");
 
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -333,7 +471,8 @@ public class UsuarioController {
         try {
             // Leer el JSON de usuarios
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type usuariosListType = new TypeToken<List<Propietario>>() {}.getType();
+            Type usuariosListType = new TypeToken<List<Propietario>>() {
+            }.getType();
             List<Propietario> usuarios = gson.fromJson(usuariosData, usuariosListType);
 
             // Buscar el usuario por ID
@@ -353,12 +492,10 @@ public class UsuarioController {
             }
 
 
-
             String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
-            Type playlistsListType = new TypeToken<List<Playlist>>() {}.getType();
+            Type playlistsListType = new TypeToken<List<Playlist>>() {
+            }.getType();
             List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
-
-
 
 
             List<Playlist> playlistsUsuario = todasLasPlaylists.stream()
@@ -373,12 +510,14 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al leer el archivo JSON\"}");
         }
     }
+
     @GetMapping("/ConsultarComentarios")
     public ResponseEntity<String> ConsultarComentarios(@RequestParam("idCancion") Integer idCancion) {
         try {
 
             String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/canciones.json")));
-            Type cancionesListType = new TypeToken<List<Cancion>>() {}.getType();
+            Type cancionesListType = new TypeToken<List<Cancion>>() {
+            }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
 
 
@@ -394,7 +533,8 @@ public class UsuarioController {
 
 
             String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/comentarios.json")));
-            Type comentariosListType = new TypeToken<List<Comentario>>() {}.getType();
+            Type comentariosListType = new TypeToken<List<Comentario>>() {
+            }.getType();
             List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosListType);
 
 
