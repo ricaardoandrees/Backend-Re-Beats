@@ -23,7 +23,7 @@ public class AdminController {
 
     private final Gson gson = new Gson();
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/CrearCancion")
+   /* @PostMapping("/CrearCancion")
     public ResponseEntity<String> crearCancion(@RequestParam("titulo") String titulo, @RequestParam("autor") String autor, @RequestParam("genero") String genero,
                                                @RequestParam("fecha") String fecha,
                                                @RequestParam("imagen") String imagen) {
@@ -48,6 +48,8 @@ public class AdminController {
             return ResponseEntity.status(500).body("{\"error\":\"Error al leer/escribir el JSON\"}");
         }
     }
+
+    */
     @GetMapping("/ConsultarCanciones")
     public ResponseEntity<String> ConsultarCanciones() {
         try {

@@ -1,148 +1,42 @@
 [
     {
-        "ID": 0,
-        "Amigos": [],
-        "Playlists": [],
+        "id": 0,
         "nombre": "admin",
-        "clave": "admin1234"
+        "clave": "admin1234",
+        "rol": "Admin",
+        "amigos": [],
+        "playlists": []
     },
     {
-        "ID": 1,
-        "Amigos": [],
-        "Playlists": [],
+        "id": 1,
         "nombre": "Ricardo",
-        "clave": "ricardo456"
+        "clave": "ricardo456",
+        "rol": "Usuario",
+        "amigos": [],
+        "playlists": []
     },
     {
-        "ID": 2,
-        "Amigos": ["Jharold"],
-        "Playlists": [
-            {
-                "Descripcion": "Mi playlist favorita",
-                "Propietario": "Alex",
-                "Canciones": [
-                    {
-                        "titulo": "Miau",
-                        "autor": "Young Cister",
-                        "genero": "Urbano",
-                        "fecha": "2024-06-13",
-                        "imagen": "http://localhost:8080/Imagenes/Miau.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=vwcuT3Gd0uA"]
-                    },
-                    {
-                        "titulo": "Cangrinaje",
-                        "autor": "Cruz Cafuné",
-                        "genero": "Hip hop",
-                        "fecha": "2023-01-01",
-                        "imagen": "http://localhost:8080/Imagenes/Cangrinaje.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=waOUPmXiV5g"]
-                    },
-                    {
-                        "titulo": "Ateo",
-                        "autor": "C. Tangana & Nathy Peluso",
-                        "genero": "Bachata",
-                        "fecha": "2021-10-08",
-                        "imagen": "http://localhost:8080/Imagenes/Ateo.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=3gz0rOQnH9U"]
-                    },
-                    {
-                        "titulo": "Demasiadas Mujeres",
-                        "autor": "C. Tangana",
-                        "genero": "Rap",
-                        "fecha": "2020-10-08",
-                        "imagen": "http://localhost:8080/Imagenes/Demasiadas-Mujeres.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=0xXWc6GVB0Y"]
-                    },
-                    {
-                        "titulo": "Como un G",
-                        "autor": "Rosalía",
-                        "genero": "Pop",
-                        "fecha": "2022-03-18",
-                        "imagen": "http://localhost:8080/Imagenes/Como-un-G.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=QwtjqyG3rwY"]
-                    },
-                    {
-                        "titulo": "Velocidad de Crucero",
-                        "autor": "Feid",
-                        "genero": "Reggaetón",
-                        "fecha": "2023-01-01",
-                        "imagen": "http://localhost:8080/Imagenes/Velocidad-de-Crucero.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=W3zt5NeSZ8I"]
-                    },
-                    {
-                        "titulo": "Enemigos",
-                        "autor": "Feid, Miky Woodz & Juhn",
-                        "genero": "Reggaetón",
-                        "fecha": "2022-01-01",
-                        "imagen": "http://localhost:8080/Imagenes/Enemigos.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=XQZV_6bH1RQ"]
-                    },
-                    {
-                        "titulo": "La Incondicional",
-                        "autor": "Luis Miguel",
-                        "genero": "Balada",
-                        "fecha": "1989-02-20",
-                        "imagen": "http://localhost:8080/Imagenes/La-Incondicional.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=2GxzGo5T6Ko"]
-                    },
-                    {
-                        "titulo": "Hasta que me olvides",
-                        "autor": "Luis Miguel",
-                        "genero": "Balada",
-                        "fecha": "1993-08-09",
-                        "imagen": "http://localhost:8080/Imagenes/Hasta-que-me-olvides.jpg",
-                        "comentarios": [],
-                        "Links": ["https://www.youtube.com/watch?v=JfAmLR4sAzg"]
-                    }
-                ]
-            }
-        ],
+        "id": 2,
         "nombre": "Alex",
-        "clave": "Alex1234"
+        "clave": "Alex1234",
+        "rol": "Usuario",
+        "amigos": [4],
+        "playlists": [101]
     },
     {
-        "ID": 3,
-        "Amigos": [],
-        "Playlists": [],
+        "id": 3,
         "nombre": "Andres",
-        "clave": "andres321"
+        "clave": "andres321",
+        "rol": "Usuario",
+        "amigos": [],
+        "playlists": []
     },
     {
-        "ID": 4,
-        "Amigos": [],
-        "Playlists": [
-            {
-                "Descripcion": "Mi nueva playlist",
-                "Propietario": "Jharold",
-                "Canciones": [
-                    {
-                        "titulo": "Neo Romeo",
-                        "autor": "Latin Mafia,rusowsky",
-                        "genero": "R&B",
-                        "fecha": "2024-07-23",
-                        "imagen": "http://localhost:8080/Imagenes/Neo-Romeo.jpeg",
-                        "Comentarios": []
-                    },
-                    {
-                        "titulo": "Babysita </3",
-                        "autor": "Alvaro Diaz",
-                        "genero": "Pop",
-                        "fecha": "2021-10-29",
-                        "imagen": "http://localhost:8080/Imagenes/Bellaka.jpg",
-                        "Comentarios": []
-                    }
-                ]
-            }
-        ],
+        "id": 4,
         "nombre": "Jharold",
-        "clave": "7689"
+        "clave": "7689",
+        "rol": "Usuario",
+        "amigos": [],
+        "playlists": [102]
     }
 ]

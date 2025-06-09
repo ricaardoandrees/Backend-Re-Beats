@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+
 public class UsuarioController {
 
     public UsuarioController() {
@@ -42,7 +42,8 @@ public class UsuarioController {
             Type listType = new TypeToken<List<Propietario>>() {
             }.getType();
             List<Propietario> perfiles = gson.fromJson(jsonData, listType);
-
+            System.out.println("Usuarios cargados: " + perfiles.size());
+            System.out.println("Buscando usuario con nombre: " + nombre);
             // Filtrar los perfiles según el nombre
             List<Propietario> filtrados = perfiles.stream()
                     .filter(perfil -> perfil.getNombre().equalsIgnoreCase(nombre))
@@ -330,13 +331,12 @@ public class UsuarioController {
     @GetMapping("/MostrarPlaylists")
     public ResponseEntity<String> MostrarPlaylists(@RequestParam("idUsuario") Integer idUsuario) {
         try {
-
+            // Leer el JSON de usuarios
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type usuariosListType = new TypeToken<List<Propietario>>() {
-            }.getType();
+            Type usuariosListType = new TypeToken<List<Propietario>>() {}.getType();
             List<Propietario> usuarios = gson.fromJson(usuariosData, usuariosListType);
 
-
+            // Buscar el usuario por ID
             Propietario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
@@ -347,15 +347,18 @@ public class UsuarioController {
                         .body("{\"mensaje\":\"Usuario no encontrado\"}");
             }
 
-            if (usuarioEncontrado.getPlaylists().isEmpty()) {
+
+            if (usuarioEncontrado.getPlaylists() == null || usuarioEncontrado.getPlaylists().isEmpty()) {
                 return ResponseEntity.ok("{\"mensaje\":\"El usuario no tiene playlists\"}");
             }
 
 
+
             String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/playlist.json")));
-            Type playlistsListType = new TypeToken<List<Playlist>>() {
-            }.getType();
+            Type playlistsListType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
+
+
 
 
             List<Playlist> playlistsUsuario = todasLasPlaylists.stream()
@@ -365,6 +368,7 @@ public class UsuarioController {
             return ResponseEntity.ok(gson.toJson(playlistsUsuario));
 
         } catch (IOException e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("{\"error\":\"Error al leer el archivo JSON\"}");
         }
