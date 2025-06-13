@@ -1,0 +1,36 @@
+[
+  {
+    "titulo": "Mi playlist favorita",
+    "id": 101,
+    "canciones": [
+      10,
+      11,
+      12
+    ],
+    "idPropietario": 2,
+    "propietario": "Alex"
+  },
+  {
+    "titulo": "Mi nueva playlist",
+    "id": 102,
+    "canciones": [
+      12,
+      13,
+      16,
+      19
+    ],
+    "idPropietario": 4,
+    "propietario": "Jharold"
+  },
+  {
+    "titulo": "Mood",
+    "id": 103,
+    "canciones": [
+      10,
+      16,
+      19
+    ],
+    "idPropietario": 1,
+    "propietario": "Ricardo"
+  }
+]

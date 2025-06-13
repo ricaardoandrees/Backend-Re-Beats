@@ -1,0 +1,58 @@
+[
+  {
+    "nombre": "admin",
+    "clave": "admin1234",
+    "id": 0,
+    "rol": "Admin",
+    "amigos": [],
+    "playlists": []
+  },
+  {
+    "nombre": "Ricardo",
+    "clave": "ricardo456",
+    "id": 1,
+    "rol": "Usuario",
+    "amigos": [],
+    "playlists": [
+      103
+    ]
+  },
+  {
+    "nombre": "Alex",
+    "clave": "Alex1234",
+    "id": 2,
+    "rol": "Usuario",
+    "amigos": [
+      4
+    ],
+    "playlists": [
+      101
+    ]
+  },
+  {
+    "nombre": "Andres",
+    "clave": "andres321",
+    "id": 3,
+    "rol": "Usuario",
+    "amigos": [],
+    "playlists": []
+  },
+  {
+    "nombre": "Jharold",
+    "clave": "7689",
+    "id": 4,
+    "rol": "Usuario",
+    "amigos": [],
+    "playlists": [
+      102
+    ]
+  },
+  {
+    "nombre": "oscar",
+    "clave": "123456",
+    "id": 5,
+    "rol": "Usuario",
+    "amigos": [],
+    "playlists": []
+  }
+]
