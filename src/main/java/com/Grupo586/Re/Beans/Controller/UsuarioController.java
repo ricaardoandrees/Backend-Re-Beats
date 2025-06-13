@@ -5,13 +5,13 @@ import com.Grupo586.Re.Beans.Model.Comentario;
 import com.Grupo586.Re.Beans.Model.Playlist;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.Grupo586.Re.Beans.Model.Propietario.RolUsuario;
+import com.Grupo586.Re.Beans.Model.Usuario.RolUsuario;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import com.Grupo586.Re.Beans.Model.Propietario;
+import com.Grupo586.Re.Beans.Model.Usuario;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +39,13 @@ public class UsuarioController {
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
 
 
-            Type listType = new TypeToken<List<Propietario>>() {
+            Type listType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> perfiles = gson.fromJson(jsonData, listType);
+            List<Usuario> perfiles = gson.fromJson(jsonData, listType);
             System.out.println("Usuarios cargados: " + perfiles.size());
             System.out.println("Buscando usuario con nombre: " + nombre);
             // Filtrar los perfiles según el nombre
-            List<Propietario> filtrados = perfiles.stream()
+            List<Usuario> filtrados = perfiles.stream()
                     .filter(perfil -> perfil.getNombre().equalsIgnoreCase(nombre))
                     .collect(Collectors.toList());
 
@@ -75,13 +75,13 @@ public class UsuarioController {
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
 
 
-            Type listType = new TypeToken<List<Propietario>>() {
+            Type listType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(jsonData, listType);
+            List<Usuario> usuarios = gson.fromJson(jsonData, listType);
 
 
             int maxId = 0;
-            for (Propietario usuario : usuarios) {
+            for (Usuario usuario : usuarios) {
                 if (usuario.getId() > maxId) {
                     maxId = usuario.getId();
                 }
@@ -98,7 +98,7 @@ public class UsuarioController {
             }
 
             // Crear nuevo usuario
-            Propietario nuevoUsuario = new Propietario(nombre, clave, nuevoId, rol, new ArrayList<>(), new ArrayList<>());
+            Usuario nuevoUsuario = new Usuario(nombre, clave, nuevoId, rol, new ArrayList<>(), new ArrayList<>());
             usuarios.add(nuevoUsuario);
 
             Files.write(Paths.get("src/main/resources/usuarios.json"), gson.toJson(usuarios).getBytes());
@@ -122,11 +122,11 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {
+            Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
-            Propietario usuarioEncontrado = usuarios.stream()
+            Usuario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
                     .orElse(null);
@@ -136,7 +136,7 @@ public class UsuarioController {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body("{\"error\":\"Usuario no registrado\"}");
             }
-            if (usuarioEncontrado.getRol() != Propietario.RolUsuario.Admin) {
+            if (usuarioEncontrado.getRol() != Usuario.RolUsuario.Admin) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .body("{\"error\":\"Permiso denegado: Solo los administradores pueden crear canciones\"}");
             }
@@ -234,12 +234,12 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {
+            Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Propietario usuarioEncontrado = usuarios.stream()
+            Usuario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
                     .orElse(null);
@@ -303,12 +303,12 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {
+            Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Propietario usuarioEncontrado = usuarios.stream()
+            Usuario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
                     .orElse(null);
@@ -356,12 +356,12 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {
+            Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Propietario usuarioEncontrado = usuarios.stream()
+            Usuario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
                     .orElse(null);
@@ -433,13 +433,13 @@ public class UsuarioController {
         try {
 
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type userListType = new TypeToken<List<Propietario>>() {
+            Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, userListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
 
-            Propietario usuarioEncontrado = null;
-            for (Propietario u : usuarios) {
+            Usuario usuarioEncontrado = null;
+            for (Usuario u : usuarios) {
                 if (u.getNombre().equalsIgnoreCase(nombre) && u.getClave().equals(clave)) {
                     usuarioEncontrado = u;
                     break;
@@ -471,12 +471,12 @@ public class UsuarioController {
         try {
             // Leer el JSON de usuarios
             String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/usuarios.json")));
-            Type usuariosListType = new TypeToken<List<Propietario>>() {
+            Type usuariosListType = new TypeToken<List<Usuario>>() {
             }.getType();
-            List<Propietario> usuarios = gson.fromJson(usuariosData, usuariosListType);
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosListType);
 
             // Buscar el usuario por ID
-            Propietario usuarioEncontrado = usuarios.stream()
+            Usuario usuarioEncontrado = usuarios.stream()
                     .filter(u -> u.getId().equals(idUsuario))
                     .findFirst()
                     .orElse(null);
