@@ -33,22 +33,23 @@ public class UsuarioController {
 
     //UH de Perfil
     @GetMapping("/MostrarPerfil")
-    public ResponseEntity<String> MostrarPerfil(@RequestParam("nombre") String nombre) throws IOException {
+    public ResponseEntity<String> MostrarPerfil(@RequestParam("id") Integer id) throws IOException {
         try {
 
-            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            // Leer el JSON de usuarios
+            String jsonData = new String(
+                    Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
 
-
-            Type listType = new TypeToken<List<Usuario>>() {
-            }.getType();
+            Type listType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> perfiles = gson.fromJson(jsonData, listType);
-            System.out.println("Usuarios cargados: " + perfiles.size());
-            System.out.println("Buscando usuario con nombre: " + nombre);
-            // Filtrar los perfiles según el nombre
-            List<Usuario> filtrados = perfiles.stream()
-                    .filter(perfil -> perfil.getNombre().equalsIgnoreCase(nombre))
-                    .collect(Collectors.toList());
 
+            System.out.println("Usuarios cargados: " + perfiles.size());
+            System.out.println("Buscando usuario con id: " + id);
+
+            // Filtrar los perfiles según el id
+            List<Usuario> filtrados = perfiles.stream()
+                    .filter(perfil -> perfil.getId().equals(id))
+                    .collect(Collectors.toList());
 
             if (filtrados.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -58,7 +59,7 @@ public class UsuarioController {
             return ResponseEntity.ok(gson.toJson(filtrados));
 
         } catch (IOException e) {
-            // si hay error leyendo el jsom
+            // si hay error leyendo el JSON
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("{\"error\":\"Error al leer el archivo JSON\"}");
         } catch (Exception e) {
@@ -66,7 +67,6 @@ public class UsuarioController {
                     .body("{\"error\":\"Error inesperado\"}");
         }
     }
-
     //Esta es la que crea el perfil
     @PostMapping("/CrearUsuario")
     public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave, @RequestParam("rol") String rolStr) {
