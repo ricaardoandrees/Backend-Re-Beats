@@ -38,7 +38,7 @@ public class UsuarioController {
 
             // Leer el JSON de usuarios
             String jsonData = new String(
-                    Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+                    Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
 
             Type listType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> perfiles = gson.fromJson(jsonData, listType);
@@ -72,7 +72,7 @@ public class UsuarioController {
     public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave, @RequestParam("rol") String rolStr) {
         try {
 
-            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
 
 
             Type listType = new TypeToken<List<Usuario>>() {
@@ -101,7 +101,7 @@ public class UsuarioController {
             Usuario nuevoUsuario = new Usuario(nombre, clave, nuevoId, rol, new ArrayList<>(), new ArrayList<>());
             usuarios.add(nuevoUsuario);
 
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/usuarios.json"), gson.toJson(usuarios).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Usuario registrado correctamente\"}");
 
@@ -116,12 +116,11 @@ public class UsuarioController {
     public ResponseEntity<String> crearCancion(@RequestParam("idUsuario") Integer idUsuario,
                                                @RequestParam("titulo") String titulo,
                                                @RequestParam("autor") String autor,
-                                               @RequestParam("genero") String genero,
                                                @RequestParam("fecha") String fecha,
                                                @RequestParam("imagen") String imagen) {
         try {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
@@ -142,7 +141,7 @@ public class UsuarioController {
             }
 
 
-            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
             Type listType = new TypeToken<List<Cancion>>() {
             }.getType();
             List<Cancion> canciones = gson.fromJson(jsonData, listType);
@@ -158,7 +157,7 @@ public class UsuarioController {
             nuevaCancion.setId(nuevoIdCancion);
 
             canciones.add(nuevaCancion);
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/canciones.json"), gson.toJson(canciones).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Canción creada correctamente\"}");
 
@@ -172,7 +171,7 @@ public class UsuarioController {
     public ResponseEntity<String> CatalogoCanciones() {
         try {
 
-            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
 
 
             Type listType = new TypeToken<List<Cancion>>() {
@@ -200,7 +199,7 @@ public class UsuarioController {
     public ResponseEntity<String> MostrarCancion(@RequestParam("idCancion") Integer idCancion) {
         try {
 
-            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
             Type cancionesListType = new TypeToken<List<Cancion>>() {
             }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
@@ -233,7 +232,7 @@ public class UsuarioController {
                                                   @RequestParam("comentarioTexto") String comentarioTexto) {
         try {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
@@ -250,7 +249,7 @@ public class UsuarioController {
             }
 
 
-            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
             Type cancionesListType = new TypeToken<List<Cancion>>() {
             }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
@@ -267,7 +266,7 @@ public class UsuarioController {
             }
 
 
-            String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/comentarios.json")));
+            String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json")));
             Type comentariosListType = new TypeToken<List<Comentario>>() {
             }.getType();
             List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosListType);
@@ -283,11 +282,11 @@ public class UsuarioController {
 
 
             comentarios.add(nuevoComentario);
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/comentarios.json"), gson.toJson(comentarios).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"), gson.toJson(comentarios).getBytes());
 
 
             cancionEncontrada.getComentarios().add(nuevoIdComentario);
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/canciones.json"), gson.toJson(canciones).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Comentario agregado correctamente\"}");
 
@@ -302,7 +301,7 @@ public class UsuarioController {
                                                 @RequestParam("descripcion") String descripcionPlaylist) {
         try {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
@@ -319,7 +318,7 @@ public class UsuarioController {
             }
 
 
-            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/playlist.json")));
+            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json")));
             Type playlistListType = new TypeToken<List<Playlist>>() {
             }.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
@@ -335,11 +334,11 @@ public class UsuarioController {
 
 
             playlists.add(nuevaPlaylist);
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/playlist.json"), gson.toJson(playlists).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists).getBytes());
 
 
             usuarioEncontrado.getPlaylists().add(nuevoIdPlaylist);
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/usuarios.json"), gson.toJson(usuarios).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Playlist creada correctamente\"}");
 
@@ -355,7 +354,7 @@ public class UsuarioController {
                                                           @RequestParam("idCancion") Integer idCancion) {
         try {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
@@ -372,7 +371,7 @@ public class UsuarioController {
             }
 
 
-            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/playlist.json")));
+            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json")));
             Type playlistListType = new TypeToken<List<Playlist>>() {
             }.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
@@ -395,7 +394,7 @@ public class UsuarioController {
             }
 
 
-            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
             Type cancionesListType = new TypeToken<List<Cancion>>() {
             }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
@@ -417,7 +416,7 @@ public class UsuarioController {
             }
 
 
-            Files.write(Paths.get("src/main/resources/Manejador/JSON/playlist.json"), gson.toJson(playlists).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Canción agregada correctamente a la playlist\"}");
 
@@ -432,7 +431,7 @@ public class UsuarioController {
                                         @RequestParam("clave") String clave) {
         try {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type userListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
@@ -470,7 +469,7 @@ public class UsuarioController {
     public ResponseEntity<String> MostrarPlaylists(@RequestParam("idUsuario") Integer idUsuario) {
         try {
             // Leer el JSON de usuarios
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/usuarios.json")));
+            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
             Type usuariosListType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosListType);
@@ -492,7 +491,7 @@ public class UsuarioController {
             }
 
 
-            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/playlist.json")));
+            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json")));
             Type playlistsListType = new TypeToken<List<Playlist>>() {
             }.getType();
             List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
@@ -515,7 +514,7 @@ public class UsuarioController {
     public ResponseEntity<String> ConsultarComentarios(@RequestParam("idCancion") Integer idCancion) {
         try {
 
-            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/canciones.json")));
+            String cancionesData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
             Type cancionesListType = new TypeToken<List<Cancion>>() {
             }.getType();
             List<Cancion> canciones = gson.fromJson(cancionesData, cancionesListType);
@@ -532,7 +531,7 @@ public class UsuarioController {
             }
 
 
-            String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Manejador/JSON/comentarios.json")));
+            String comentariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json")));
             Type comentariosListType = new TypeToken<List<Comentario>>() {
             }.getType();
             List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosListType);
