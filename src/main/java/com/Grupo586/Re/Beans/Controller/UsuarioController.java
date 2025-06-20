@@ -69,26 +69,29 @@ public class UsuarioController {
     }
     //Esta es la que crea el perfil
     @PostMapping("/CrearUsuario")
-    public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre, @RequestParam("clave") String clave, @RequestParam("rol") String rolStr) {
+    public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre,
+                                               @RequestParam("clave") String clave,
+                                               @RequestParam("rol") String rolStr) {
         try {
-
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
-
 
             Type listType = new TypeToken<List<Usuario>>() {
             }.getType();
             List<Usuario> usuarios = gson.fromJson(jsonData, listType);
 
 
-            int maxId = 0;
-            for (Usuario usuario : usuarios) {
-                if (usuario.getId() > maxId) {
-                    maxId = usuario.getId();
-                }
+            boolean nombreExiste = usuarios.stream()
+                    .anyMatch(usuario -> usuario.getNombre().equalsIgnoreCase(nombre));
+            if (nombreExiste) {
+                return ResponseEntity.status(409).body("{\"error\":\"Ya existe un usuario con ese nombre\"}");
             }
 
-            int nuevoId = maxId + 1;
+            int maxId = usuarios.stream()
+                    .mapToInt(Usuario::getId)
+                    .max()
+                    .orElse(0);
 
+            int nuevoId = maxId + 1;
 
             RolUsuario rol;
             try {
@@ -97,11 +100,11 @@ public class UsuarioController {
                 return ResponseEntity.status(400).body("{\"error\":\"Rol inválido\"}");
             }
 
-            // Crear nuevo usuario
             Usuario nuevoUsuario = new Usuario(nombre, clave, nuevoId, rol, new ArrayList<>(), new ArrayList<>());
             usuarios.add(nuevoUsuario);
 
-            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"),
+                    gson.toJson(usuarios).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Usuario registrado correctamente\"}");
 
@@ -109,7 +112,6 @@ public class UsuarioController {
             return ResponseEntity.status(500).body("{\"error\":\"Error al leer/escribir el JSON\"}");
         }
     }
-
 
     //UH de Cancion
     @PostMapping("/CrearCancion")
