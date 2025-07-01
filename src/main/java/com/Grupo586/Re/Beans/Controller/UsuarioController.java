@@ -32,8 +32,8 @@ public class UsuarioController {
     private final Gson gson = new Gson();
 
     //UH de Perfil
-    @GetMapping("/MostrarPerfil")
-    public ResponseEntity<String> MostrarPerfil(@RequestParam("id") Integer id) throws IOException {
+    @GetMapping("/MostrarUsuario")
+    public ResponseEntity<String> MostrarUsuario(@RequestParam("id") Integer id) throws IOException {
         try {
 
             // Leer el JSON de usuarios
@@ -67,18 +67,14 @@ public class UsuarioController {
                     .body("{\"error\":\"Error inesperado\"}");
         }
     }
-    //Esta es la que crea el perfil
     @PostMapping("/CrearUsuario")
     public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre,
-                                               @RequestParam("clave") String clave,
-                                               @RequestParam("rol") String rolStr) {
+                                               @RequestParam("clave") String clave) {
         try {
             String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
 
-            Type listType = new TypeToken<List<Usuario>>() {
-            }.getType();
+            Type listType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> usuarios = gson.fromJson(jsonData, listType);
-
 
             boolean nombreExiste = usuarios.stream()
                     .anyMatch(usuario -> usuario.getNombre().equalsIgnoreCase(nombre));
@@ -93,12 +89,8 @@ public class UsuarioController {
 
             int nuevoId = maxId + 1;
 
-            RolUsuario rol;
-            try {
-                rol = RolUsuario.valueOf(rolStr);
-            } catch (IllegalArgumentException e) {
-                return ResponseEntity.status(400).body("{\"error\":\"Rol inválido\"}");
-            }
+
+            RolUsuario rol = RolUsuario.Usuario;
 
             Usuario nuevoUsuario = new Usuario(nombre, clave, nuevoId, rol, new ArrayList<>(), new ArrayList<>());
             usuarios.add(nuevoUsuario);
@@ -109,10 +101,9 @@ public class UsuarioController {
             return ResponseEntity.ok("{\"mensaje\":\"Usuario registrado correctamente\"}");
 
         } catch (IOException e) {
-            return ResponseEntity.status(500).body("{\"error\":\"Error al leer/escribir el JSON\"}");
+            return ResponseEntity.status(500).body("{\"error\":\"Error en el JSON al crear el perfil.\"}");
         }
     }
-
     //UH de Cancion
     @PostMapping("/CrearCancion")
     public ResponseEntity<String> crearCancion(@RequestParam("idUsuario") Integer idUsuario,
@@ -467,43 +458,27 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/MostrarPlaylists")
-    public ResponseEntity<String> MostrarPlaylists(@RequestParam("idUsuario") Integer idUsuario) {
+    @GetMapping("/MostrarPlaylist")
+    public ResponseEntity<String> mostrarPlaylist(@RequestParam("idPlaylist") Integer idPlaylist) {
         try {
-            // Leer el JSON de usuarios
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
-            Type usuariosListType = new TypeToken<List<Usuario>>() {
-            }.getType();
-            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosListType);
+            // Leer el JSON de playlists
+            String playlistsData = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json")));
+            Type playlistsListType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
 
-            // Buscar el usuario por ID
-            Usuario usuarioEncontrado = usuarios.stream()
-                    .filter(u -> u.getId().equals(idUsuario))
+            // Buscar la playlist por ID
+            Playlist playlistEncontrada = todasLasPlaylists.stream()
+                    .filter(pl -> pl.getId().equals(idPlaylist))
                     .findFirst()
                     .orElse(null);
 
-            if (usuarioEncontrado == null) {
+            if (playlistEncontrada == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+                        .body("{\"mensaje\":\"Error, la playlist no encontrada\"}");
             }
 
-
-            if (usuarioEncontrado.getPlaylists() == null || usuarioEncontrado.getPlaylists().isEmpty()) {
-                return ResponseEntity.ok("{\"mensaje\":\"El usuario no tiene playlists\"}");
-            }
-
-
-            String playlistsData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json")));
-            Type playlistsListType = new TypeToken<List<Playlist>>() {
-            }.getType();
-            List<Playlist> todasLasPlaylists = gson.fromJson(playlistsData, playlistsListType);
-
-
-            List<Playlist> playlistsUsuario = todasLasPlaylists.stream()
-                    .filter(pl -> usuarioEncontrado.getPlaylists().contains(pl.getId()))
-                    .collect(Collectors.toList());
-
-            return ResponseEntity.ok(gson.toJson(playlistsUsuario));
+            return ResponseEntity.ok(gson.toJson(playlistEncontrada));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -551,6 +526,126 @@ public class UsuarioController {
         }
     }
 
+
+    //SPRING 2
+
+    @PostMapping("/EditarComentario")
+    public ResponseEntity<String> editarComentario(@RequestParam("idComentario") Integer idComentario,
+                                                   @RequestParam("idUsuario") Integer idUsuario,
+                                                   @RequestParam("nuevoComentario") String nuevoComentario) {
+        try {
+
+            String comentariosData = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json")));
+            Type listaComentariosType = new TypeToken<List<Comentario>>() {}.getType();
+            List<Comentario> comentarios = gson.fromJson(comentariosData, listaComentariosType);
+
+
+            Comentario comentarioEncontrado = comentarios.stream()
+                    .filter(c -> c.getId().equals(idComentario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (comentarioEncontrado == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Comentario no encontrado\"}");
+            }
+
+            // verificar usuario sea el propietario
+            if (!comentarioEncontrado.getIdPropietario().equals(idUsuario)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"No tienes permiso para editar este comentario\"}");
+            }
+
+
+            comentarioEncontrado.setComentario(nuevoComentario);
+
+
+            String jsonActualizado = gson.toJson(comentarios);
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"),
+                    jsonActualizado.getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Comentario actualizado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al editar el comentario\"}");
+        }
+    }
+
+    @PostMapping("/EliminarComentario")
+    public ResponseEntity<String> eliminarComentario(@RequestParam("idComentario") Integer idComentario,
+                                                     @RequestParam("idUsuario") Integer idUsuario) {
+        try {
+            // Leer usuarios
+            String usuariosData = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
+            Type usuariosListType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosListType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Error,usuario no encontrado\"}");
+            }
+
+            // ler comentarios
+            String comentariosData = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json")));
+            Type listaComentariosType = new TypeToken<List<Comentario>>() {}.getType();
+            List<Comentario> comentarios = gson.fromJson(comentariosData, listaComentariosType);
+
+            Comentario comentario = comentarios.stream()
+                    .filter(c -> c.getId().equals(idComentario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (comentario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"El comentario no fue encotnrado\"}");
+            }
+
+            boolean esAdmin = usuario.getRol() == Usuario.RolUsuario.Admin;
+            boolean esAutor = usuario.getId().equals(comentario.getIdPropietario());
+
+            if (!esAdmin && !esAutor) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"No tienes permiso para eliminar este comentario, lo sentimos\"}");
+            }
+
+            // elimiuna comentario del json comentarios
+            comentarios.removeIf(c -> c.getId().equals(idComentario));
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"),
+                    gson.toJson(comentarios).getBytes());
+
+            // entra en canciones json y borra
+            String cancionesData = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
+            Type listaCancionesType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(cancionesData, listaCancionesType);
+
+            for (Cancion cancion : canciones) {
+                if (cancion.getComentarios() != null) {
+                    cancion.getComentarios().removeIf(id -> id.equals(idComentario));
+                }
+            }
+
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"),
+                    gson.toJson(canciones).getBytes());
+
+            return ResponseEntity.ok("{\"mensaje\":\"Comentario eliminado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la eliminación\"}");
+        }
+    }
 }
 
 
