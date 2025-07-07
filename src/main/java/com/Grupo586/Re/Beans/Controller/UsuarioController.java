@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
-
+@CrossOrigin
 public class UsuarioController {
 
     public UsuarioController() {
@@ -32,6 +32,7 @@ public class UsuarioController {
     private final Gson gson = new Gson();
 
     //UH de Perfil
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/MostrarUsuario")
     public ResponseEntity<String> MostrarUsuario(@RequestParam("id") Integer id) throws IOException {
         try {
@@ -67,6 +68,8 @@ public class UsuarioController {
                     .body("{\"error\":\"Error inesperado\"}");
         }
     }
+    //Esta es la que crea el perfil
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/CrearUsuario")
     public ResponseEntity<String> CrearUsuario(@RequestParam("nombre") String nombre,
                                                @RequestParam("clave") String clave) {
@@ -105,6 +108,7 @@ public class UsuarioController {
         }
     }
     //UH de Cancion
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/CrearCancion")
     public ResponseEntity<String> crearCancion(@RequestParam("idUsuario") Integer idUsuario,
                                                @RequestParam("titulo") String titulo,
@@ -160,6 +164,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/CatalogoCanciones")
     public ResponseEntity<String> CatalogoCanciones() {
         try {
@@ -188,6 +193,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/MostrarCancion")
     public ResponseEntity<String> MostrarCancion(@RequestParam("idCancion") Integer idCancion) {
         try {
@@ -219,6 +225,7 @@ public class UsuarioController {
     //UH de Comentarios
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/CrearComentario")
     public ResponseEntity<String> CrearComentario(@RequestParam("idCancion") Integer idCancion,
                                                   @RequestParam("idUsuario") Integer idUsuario,
@@ -289,6 +296,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/CrearPlaylist")
     public ResponseEntity<String> CrearPlaylist(@RequestParam("idUsuario") Integer idUsuario,
                                                 @RequestParam("descripcion") String descripcionPlaylist) {
@@ -341,6 +349,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/AgregarCancionAPlaylist")
     public ResponseEntity<String> AgregarCancionAPlaylist(@RequestParam("idUsuario") Integer idUsuario,
                                                           @RequestParam("idPlaylist") Integer idPlaylist,
@@ -419,6 +428,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/Login")
     public ResponseEntity<String> Login(@RequestParam("nombre") String nombre,
                                         @RequestParam("clave") String clave) {
@@ -458,7 +468,8 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("/MostrarPlaylist")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/MostrarPlaylists")
     public ResponseEntity<String> mostrarPlaylist(@RequestParam("idPlaylist") Integer idPlaylist) {
         try {
             // Leer el JSON de playlists
@@ -487,6 +498,7 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/ConsultarComentarios")
     public ResponseEntity<String> ConsultarComentarios(@RequestParam("idCancion") Integer idCancion) {
         try {
