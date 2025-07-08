@@ -890,7 +890,7 @@ public class UsuarioController {
             }
 
             // Leer playlists
-            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
             Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
 
@@ -917,7 +917,7 @@ public class UsuarioController {
             playlist.getCanciones().removeIf(id -> id.equals(idCancion));
 
 
-            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists));
 
             return ResponseEntity.ok("{\"mensaje\":\"Canción eliminada de la playlist correctamente\"}");
 
