@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/user")
 @RestController
-@CrossOrigin
+
 public class UsuarioController {
 
     public UsuarioController() {
@@ -194,7 +194,7 @@ public class UsuarioController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/MostrarCancion")
     public ResponseEntity<String> MostrarCancion(@RequestParam("idCancion") Integer idCancion) {
         try {
@@ -1110,6 +1110,9 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al procesar la edición\"}");
         }
     }
+
+
+    //xd
 }
 
 
