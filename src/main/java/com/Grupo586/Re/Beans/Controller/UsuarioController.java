@@ -1111,6 +1111,23 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/MostrarPlaylists")
+    public ResponseEntity<String> mostrarPlaylists() {
+        try {
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            Type playlistListType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
+
+            return ResponseEntity.ok(gson.toJson(playlists));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al leer el archivo de playlists\"}");
+        }
+    }
+
 
     //xd
 }
