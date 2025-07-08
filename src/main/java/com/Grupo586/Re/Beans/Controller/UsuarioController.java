@@ -194,7 +194,7 @@ public class UsuarioController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = {"http://localhost:8080","http://localhost:4200"})
     @GetMapping("/MostrarCancion")
     public ResponseEntity<String> MostrarCancion(@RequestParam("idCancion") Integer idCancion) {
         try {
