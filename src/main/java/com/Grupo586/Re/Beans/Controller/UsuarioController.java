@@ -1115,7 +1115,7 @@ public class UsuarioController {
     @GetMapping("/MostrarTodasPlaylists")
     public ResponseEntity<String> mostrarTodasPlaylists() {
         try {
-            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
             Type playlistListType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistListType);
 
