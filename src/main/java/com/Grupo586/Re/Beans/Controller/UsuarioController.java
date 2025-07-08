@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -539,8 +540,9 @@ public class UsuarioController {
     }
 
 
-    //SPRING 2
-
+    //SPRINt 2
+//editar y eliminar comentarios
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/EditarComentario")
     public ResponseEntity<String> editarComentario(@RequestParam("idComentario") Integer idComentario,
                                                    @RequestParam("idUsuario") Integer idUsuario,
@@ -585,7 +587,7 @@ public class UsuarioController {
                     .body("{\"error\":\"Error al editar el comentario\"}");
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/EliminarComentario")
     public ResponseEntity<String> eliminarComentario(@RequestParam("idComentario") Integer idComentario,
                                                      @RequestParam("idUsuario") Integer idUsuario) {
@@ -656,6 +658,456 @@ public class UsuarioController {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("{\"error\":\"Error al procesar la eliminación\"}");
+        }
+    }
+
+    //editar y eliminar perfil
+   /* @PostMapping("/EliminarPerfil")
+    public ResponseEntity<String> eliminarPerfil(@RequestParam("idUsuario") Integer idUsuarioActivo,
+                                                 @RequestParam("idPerfil") Integer idPerfil) {
+        try {
+            if (!idUsuarioActivo.equals(idPerfil)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"Solo puedes eliminar tu propio perfil\"}");
+            }
+
+            // Leer usuarios
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuarioAEliminar = usuarios.stream()
+                    .filter(u -> u.getId().equals(idPerfil))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuarioAEliminar == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+
+            String comentariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"));
+            Type comentariosType = new TypeToken<List<Comentario>>() {}.getType();
+            List<Comentario> comentarios = gson.fromJson(comentariosData, comentariosType);
+
+
+            comentarios.removeIf(c -> c.getIdPropietario().equals(idPerfil));
+
+
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
+
+            // -1 en playlists del usuario para desvincular
+            for (Playlist playlist : playlists) {
+                if (playlist.getIdPropietario().equals(idPerfil)) {
+                    playlist.setIdPropietario(-1);
+                }
+            }
+
+            // eliminar al usuario de la lista de amigos de otro
+            for (Usuario u : usuarios) {
+                if (!u.getId().equals(idPerfil)) {
+                    u.getAmigos().removeIf(id -> id.equals(idPerfil));
+                }
+            }
+
+
+            usuarios.removeIf(u -> u.getId().equals(idPerfil));
+
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"), gson.toJson(comentarios));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Perfil eliminado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la eliminación\"}");
+        }
+    }*/
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EditarNombre")
+    public ResponseEntity<String> editarNombre(@RequestParam("idUsuario") Integer idUsuario,
+                                               @RequestParam("nuevoNombre") String nuevoNombre) {
+        try {
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            boolean nombreYaExiste = usuarios.stream()
+                    .anyMatch(u -> u.getNombre().equalsIgnoreCase(nuevoNombre) && !u.getId().equals(idUsuario));
+
+            if (nombreYaExiste) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"mensaje\":\"Lo sentimos, nombre ya está en uso por otro usuario\"}");
+            }
+
+            usuario.setNombre(nuevoNombre);
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
+
+            return ResponseEntity.ok("{\"mensaje\":\"El nombre ha sido actualizado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la edición de nombre\"}");
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EditarClave")
+    public ResponseEntity<String> editarClave(@RequestParam("idUsuario") Integer idUsuario,
+                                              @RequestParam("nuevaClave") String nuevaClave) {
+        try {
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            if (usuario.getClave().equals(nuevaClave)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"mensaje\":\"La nueva clave no puede ser igual a la anterior\"}");
+            }
+
+            usuario.setClave(nuevaClave);
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
+
+            return ResponseEntity.ok("{\"mensaje\":\"La clave ha sido actualizada correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la edición de clave\"}");
+        }
+    }
+
+    //eliminar cancion y eliminar cancion de playlist
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EliminarCancion")
+    public ResponseEntity<String> eliminarCancion(@RequestParam("idCancion") Integer idCancion,
+                                                  @RequestParam("idUsuario") Integer idUsuario) {
+        try {
+            // Leer usuarios
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            if (usuario.getRol() != Usuario.RolUsuario.Admin) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"Solo los administradores pueden eliminar canciones permanentemente\"}");
+            }
+
+            // Leer canciones
+            String cancionesData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"));
+            Type cancionesType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(cancionesData, cancionesType);
+
+            Cancion cancionAEliminar = canciones.stream()
+                    .filter(c -> c.getId().equals(idCancion))
+                    .findFirst()
+                    .orElse(null);
+
+            if (cancionAEliminar == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Canción no encontrada\"}");
+            }
+
+
+            canciones.removeIf(c -> c.getId().equals(idCancion));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones));
+
+            // Limpiar de playlists
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
+
+            for (Playlist playlist : playlists) {
+                playlist.getCanciones().removeIf(id -> id.equals(idCancion));
+            }
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Canción eliminada permanentemente por el administrador\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la eliminación de la canción\"}");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EliminarCancionDePlaylist")
+    public ResponseEntity<String> eliminarCancionDePlaylist(@RequestParam("idUsuario") Integer idUsuario,
+                                                            @RequestParam("idPlaylist") Integer idPlaylist,
+                                                            @RequestParam("idCancion") Integer idCancion) {
+        try {
+            // Leer usuarios
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"Usuario no registrado\"}");
+            }
+
+            // Leer playlists
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
+
+            Playlist playlist = playlists.stream()
+                    .filter(p -> p.getId().equals(idPlaylist))
+                    .findFirst()
+                    .orElse(null);
+
+            if (playlist == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Playlist no encontrada\"}");
+            }
+
+            if (!playlist.getIdPropietario().equals(idUsuario)) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("{\"mensaje\":\"No tienes permiso para modificar esta playlist\"}");
+            }
+
+            if (!playlist.getCanciones().contains(idCancion)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"mensaje\":\"La canción no está en la playlist\"}");
+            }
+
+            playlist.getCanciones().removeIf(id -> id.equals(idCancion));
+
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Canción eliminada de la playlist correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la eliminación\"}");
+        }
+    }
+    //agregar y eliminar amigos
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/AgregarAmigo")
+    public ResponseEntity<String> agregarAmigo(@RequestParam("idUsuario") Integer idUsuario,
+                                               @RequestParam("idAmigo") Integer idAmigo) {
+        try {
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            Usuario amigo = usuarios.stream()
+                    .filter(u -> u.getId().equals(idAmigo))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null || amigo == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario o amigo no encontrado\"}");
+            }
+
+            if (usuario.getAmigos().contains(idAmigo)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"mensaje\":\"El usuario ya tiene agregado a ese amigo\"}");
+            }
+
+            usuario.getAmigos().add(idAmigo);
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
+            return ResponseEntity.ok("{\"mensaje\":\"Amigo agregado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la solicitud\"}");
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EliminarAmigo")
+    public ResponseEntity<String> eliminarAmigo(@RequestParam("idUsuario") Integer idUsuario,
+                                                @RequestParam("idAmigo") Integer idAmigo) {
+        try {
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            if (!usuario.getAmigos().contains(idAmigo)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("{\"mensaje\":\"Ese usuario no está en tu lista de amigos\"}");
+            }
+
+            usuario.getAmigos().removeIf(id -> id.equals(idAmigo));
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
+            return ResponseEntity.ok("{\"mensaje\":\"Amigo eliminado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la solicitud\"}");
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EditarPlaylist")
+    public ResponseEntity<String> editarNombrePlaylist(@RequestParam("idUsuario") Integer idUsuario,
+                                                       @RequestParam("idPlaylist") Integer idPlaylist,
+                                                       @RequestParam("nuevoTitulo") String nuevoTitulo) {
+        try {
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
+
+            Playlist playlist = playlists.stream()
+                    .filter(p -> p.getId().equals(idPlaylist))
+                    .findFirst()
+                    .orElse(null);
+
+            if (playlist == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Playlist no encontrada\"}");
+            }
+
+            if (!playlist.getIdPropietario().equals(idUsuario)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"No tienes permiso para modificar esta playlist\"}");
+            }
+
+            playlist.setTitulo(nuevoTitulo);
+
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Nombre de la playlist actualizado correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la edición de la playlist\"}");
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EditarCancion")
+    public ResponseEntity<String> editarCancion(@RequestParam("idUsuario") Integer idUsuario,
+                                                @RequestParam("idCancion") Integer idCancion,
+                                                @RequestParam("nuevoTitulo") String nuevoTitulo,
+                                                @RequestParam("nuevoAutor") String nuevoAutor,
+                                                @RequestParam("nuevaFecha") String nuevaFecha,
+                                                @RequestParam("nuevaImagen") String nuevaImagen,
+                                                @RequestParam("links") String links) {
+        //para pdoer enviar varios links: sepáralos con comas (ej: link1,link2,link3)
+        try {
+            // Leer usuarios
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            if (usuario.getRol() != Usuario.RolUsuario.Admin) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body("{\"mensaje\":\"Solo los administradores pueden editar canciones, lo sentimos\"}");
+            }
+
+            // Leer canciones
+            String cancionesData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"));
+            Type cancionesType = new TypeToken<List<Cancion>>() {}.getType();
+            List<Cancion> canciones = gson.fromJson(cancionesData, cancionesType);
+
+            Cancion cancion = canciones.stream()
+                    .filter(c -> c.getId().equals(idCancion))
+                    .findFirst()
+                    .orElse(null);
+
+            if (cancion == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Canción no encontrada\"}");
+            }
+
+            // Procesar links separados por coma
+            List<String> listaLinks = Arrays.stream(links.split(","))
+                    .map(String::trim)
+                    .filter(link -> !link.isEmpty())
+                    .collect(Collectors.toList());
+
+            // Actualizar campos
+            cancion.setTitulo(nuevoTitulo);
+            cancion.setAutor(nuevoAutor);
+            cancion.setFecha(nuevaFecha);
+            cancion.setImagen(nuevaImagen);
+            cancion.setLinks(new ArrayList<>(listaLinks));
+
+            // Guardar cambios
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Canción editada correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la edición\"}");
         }
     }
 }
