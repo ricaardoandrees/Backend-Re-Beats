@@ -1112,8 +1112,8 @@ public class UsuarioController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/MostrarPlaylists")
-    public ResponseEntity<String> mostrarPlaylists() {
+    @GetMapping("/MostrarTodasPlaylists")
+    public ResponseEntity<String> mostrarTodasPlaylists() {
         try {
             String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
             Type playlistListType = new TypeToken<List<Playlist>>() {}.getType();
