@@ -3,8 +3,6 @@
     "titulo": "Mi playlist favorita",
     "id": 101,
     "canciones": [
-      10,
-      11,
       12
     ],
     "idPropietario": 2,
@@ -26,7 +24,6 @@
     "titulo": "Mood",
     "id": 103,
     "canciones": [
-      10,
       16,
       19
     ],

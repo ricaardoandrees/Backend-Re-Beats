@@ -849,7 +849,7 @@ public class UsuarioController {
             Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones));
 
             // Limpiar de playlists
-            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
             Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
 
@@ -857,7 +857,7 @@ public class UsuarioController {
                 playlist.getCanciones().removeIf(id -> id.equals(idCancion));
             }
 
-            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists));
 
             return ResponseEntity.ok("{\"mensaje\":\"Canción eliminada permanentemente por el administrador\"}");
 
@@ -1009,7 +1009,7 @@ public class UsuarioController {
                                                        @RequestParam("idPlaylist") Integer idPlaylist,
                                                        @RequestParam("nuevoTitulo") String nuevoTitulo) {
         try {
-            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
             Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
 
@@ -1030,7 +1030,7 @@ public class UsuarioController {
 
             playlist.setTitulo(nuevoTitulo);
 
-            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists));
 
             return ResponseEntity.ok("{\"mensaje\":\"Nombre de la playlist actualizado correctamente\"}");
 
