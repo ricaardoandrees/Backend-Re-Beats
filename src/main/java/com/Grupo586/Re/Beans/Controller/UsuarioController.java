@@ -115,12 +115,13 @@ public class UsuarioController {
                                                @RequestParam("titulo") String titulo,
                                                @RequestParam("autor") String autor,
                                                @RequestParam("fecha") String fecha,
-                                               @RequestParam("imagen") String imagen) {
-        try {
+                                               @RequestParam("imagen") String imagen,
+                                               @RequestParam("links") String linksSeparadosPorComas) {
 
-            String usuariosData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json")));
-            Type userListType = new TypeToken<List<Usuario>>() {
-            }.getType();
+        // para varios links, entre comas
+        try {
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type userListType = new TypeToken<List<Usuario>>() {}.getType();
             List<Usuario> usuarios = gson.fromJson(usuariosData, userListType);
 
             Usuario usuarioEncontrado = usuarios.stream()
@@ -128,42 +129,48 @@ public class UsuarioController {
                     .findFirst()
                     .orElse(null);
 
-
             if (usuarioEncontrado == null) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body("{\"error\":\"Usuario no registrado\"}");
             }
+
             if (usuarioEncontrado.getRol() != Usuario.RolUsuario.Admin) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .body("{\"error\":\"Permiso denegado: Solo los administradores pueden crear canciones\"}");
             }
 
-
-            String jsonData = new String(Files.readAllBytes(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json")));
-            Type listType = new TypeToken<List<Cancion>>() {
-            }.getType();
+            String jsonData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"));
+            Type listType = new TypeToken<List<Cancion>>() {}.getType();
             List<Cancion> canciones = gson.fromJson(jsonData, listType);
-
 
             int nuevoIdCancion = canciones.stream()
                     .mapToInt(Cancion::getId)
                     .max()
                     .orElse(0) + 1;
 
-            // Crear y guardar la nueva canción
-            Cancion nuevaCancion = new Cancion(titulo, nuevoIdCancion, autor, fecha, imagen, new ArrayList<>(), new ArrayList<>());
-            nuevaCancion.setId(nuevoIdCancion);
+
+            List<String> links = Arrays.stream(linksSeparadosPorComas.split(","))
+                    .map(String::trim)
+                    .filter(link -> !link.isEmpty())
+                    .collect(Collectors.toList());
+
+
+            Cancion nuevaCancion = new Cancion(titulo, nuevoIdCancion, autor, fecha, imagen,
+                    new ArrayList<>(links), new ArrayList<>());
 
             canciones.add(nuevaCancion);
-            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"), gson.toJson(canciones).getBytes());
+            Files.write(Paths.get("src/main/resources/Almacenamiento/JSON/canciones.json"),
+                    gson.toJson(canciones).getBytes());
 
             return ResponseEntity.ok("{\"mensaje\":\"Canción creada correctamente\"}");
 
         } catch (IOException e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("{\"error\":\"Error al leer/escribir el archivo JSON\"}");
         }
     }
+
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/CatalogoCanciones")
@@ -1128,7 +1135,98 @@ public class UsuarioController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/AgregarPlaylistAUsuario")
+    public ResponseEntity<String> agregarPlaylist(@RequestParam("idUsuario") Integer idUsuario,
+                                                  @RequestParam("idPlaylist") Integer idPlaylist) {
+        try {
 
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
+            Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
+            List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
+
+            boolean playlistExiste = playlists.stream()
+                    .anyMatch(p -> p.getId().equals(idPlaylist));
+
+            if (!playlistExiste) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Playlist no encontrada\"}");
+            }
+
+
+            if (!usuario.getPlaylists().contains(idPlaylist)) {
+                usuario.getPlaylists().add(idPlaylist);
+
+
+                Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"),
+                        gson.toJson(usuarios));
+
+                return ResponseEntity.ok("{\"mensaje\":\"Playlist agregada al perfil correctamente\"}");
+            } else {
+                return ResponseEntity.ok("{\"mensaje\":\"La playlist ya está en el perfil\"}");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la asignación de playlist\"}");
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/EliminarPlaylistDeUsuario")
+    public ResponseEntity<String> eliminarPlaylist(@RequestParam("idUsuario") Integer idUsuario,
+                                                   @RequestParam("idPlaylist") Integer idPlaylist) {
+        try {
+            // Leer usuarios
+            String usuariosData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"));
+            Type usuariosType = new TypeToken<List<Usuario>>() {}.getType();
+            List<Usuario> usuarios = gson.fromJson(usuariosData, usuariosType);
+
+            Usuario usuario = usuarios.stream()
+                    .filter(u -> u.getId().equals(idUsuario))
+                    .findFirst()
+                    .orElse(null);
+
+            if (usuario == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"Usuario no encontrado\"}");
+            }
+
+            if (usuario.getPlaylists() == null || !usuario.getPlaylists().contains(idPlaylist)) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("{\"mensaje\":\"La playlist no está asociada al usuario\"}");
+            }
+
+            usuario.getPlaylists().removeIf(id -> id.equals(idPlaylist));
+
+            // Guardar cambios
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"),
+                    gson.toJson(usuarios));
+
+            return ResponseEntity.ok("{\"mensaje\":\"Playlist eliminada del perfil correctamente\"}");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"Error al procesar la eliminación de la playlist\"}");
+        }
+    }
     //xd
 }
 
