@@ -1,4 +1,4 @@
-package com.Grupo586.Re.Beans;
+package com.Grupo586.Re.Beans.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -12,13 +12,12 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
-        registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:4200")
-                .allowedMethods("GET", "DELETE","POST","PUT")
-                .allowCredentials(true).maxAge(3600);
-
-        // Add more mappings...
+        registry.addMapping("/**")
+                .allowedOrigins("https://front.alexsolutions.tech", "http://localhost:4200")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+        System.out.println("WebConfig loaded.");
     }
 
     @Override
