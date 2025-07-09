@@ -668,8 +668,7 @@ public class UsuarioController {
         }
     }
 
-    //editar y eliminar perfil
-   /* @PostMapping("/EliminarPerfil")
+   @PostMapping("/EliminarPerfil")
     public ResponseEntity<String> eliminarPerfil(@RequestParam("idUsuario") Integer idUsuarioActivo,
                                                  @RequestParam("idPerfil") Integer idPerfil) {
         try {
@@ -702,7 +701,7 @@ public class UsuarioController {
             comentarios.removeIf(c -> c.getIdPropietario().equals(idPerfil));
 
 
-            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"));
+            String playlistsData = Files.readString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"));
             Type playlistsType = new TypeToken<List<Playlist>>() {}.getType();
             List<Playlist> playlists = gson.fromJson(playlistsData, playlistsType);
 
@@ -726,7 +725,7 @@ public class UsuarioController {
 
             Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/usuarios.json"), gson.toJson(usuarios));
             Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/comentarios.json"), gson.toJson(comentarios));
-            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlists.json"), gson.toJson(playlists));
+            Files.writeString(Paths.get("src/main/resources/Almacenamiento/JSON/playlist.json"), gson.toJson(playlists));
 
             return ResponseEntity.ok("{\"mensaje\":\"Perfil eliminado correctamente\"}");
 
@@ -735,7 +734,10 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("{\"error\":\"Error al procesar la eliminación\"}");
         }
-    }*/
+    }
+
+
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/EditarNombre")
     public ResponseEntity<String> editarNombre(@RequestParam("idUsuario") Integer idUsuario,
